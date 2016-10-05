@@ -1,0 +1,71 @@
+$icons: (
+    sprite: (width: 132.546px, height: 971px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
+    alarm: (width: 106.016px, height: 122.585px, backgroundX: 0px, backgroundY: 0px),
+    arrow: (width: 30.409px, height: 17.334px, backgroundX: 0px, backgroundY: -123px),
+    arrowS: (width: 16.04px, height: 8.601px, backgroundX: 0px, backgroundY: -141px),
+    camera: (width: 130.869px, height: 119.389px, backgroundX: 0px, backgroundY: -150px),
+    circus: (width: 85.575px, height: 93.03px, backgroundX: 0px, backgroundY: -270px),
+    factory: (width: 106.711px, height: 94.453px, backgroundX: 0px, backgroundY: -364px),
+    houses: (width: 132.546px, height: 94.389px, backgroundX: 0px, backgroundY: -459px),
+    logoSymbol: (width: 41.144px, height: 36.001px, backgroundX: 0px, backgroundY: -554px),
+    menu: (width: 22.414px, height: 18.16px, backgroundX: 0px, backgroundY: -591px),
+    music: (width: 96.154px, height: 96.154px, backgroundX: 0px, backgroundY: -610px),
+    phone: (width: 14.616px, height: 25.16px, backgroundX: 0px, backgroundY: -707px),
+    satellite: (width: 92.235px, height: 126.495px, backgroundX: 0px, backgroundY: -733px),
+    server: (width: 112.197px, height: 110.262px, backgroundX: 0px, backgroundY: -860px),
+);
+
+$sprite: map-get($icons, sprite);
+
+
+@mixin get-sprite($spritename){
+    $spritename: map-get($icons, $spritename);
+    
+    display: inline-block;
+    width: map-get($spritename, width);
+    height: map-get($spritename, height);
+    background-image: url(map-get($sprite, svgPath));
+    background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+
+    #{$modernizr-nosvg} & { background-image: url(map-get($sprite, pngPath)); }
+}
+
+.sprite-alarm{
+	@include get-sprite(alarm);
+}
+.sprite-arrow{
+	@include get-sprite(arrow);
+}
+.sprite-arrowS{
+	@include get-sprite(arrowS);
+}
+.sprite-camera{
+	@include get-sprite(camera);
+}
+.sprite-circus{
+	@include get-sprite(circus);
+}
+.sprite-factory{
+	@include get-sprite(factory);
+}
+.sprite-houses{
+	@include get-sprite(houses);
+}
+.sprite-logoSymbol{
+	@include get-sprite(logoSymbol);
+}
+.sprite-menu{
+	@include get-sprite(menu);
+}
+.sprite-music{
+	@include get-sprite(music);
+}
+.sprite-phone{
+	@include get-sprite(phone);
+}
+.sprite-satellite{
+	@include get-sprite(satellite);
+}
+.sprite-server{
+	@include get-sprite(server);
+}

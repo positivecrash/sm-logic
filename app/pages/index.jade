@@ -1,0 +1,92 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageclass = 'p-index'
+
+block head
+	- var pageTitle = 'Инженерная компания Sm-logic Санкт-Петербург'
+
+block content
+	#scrn-1
+		#banner.banner_back
+			#banner_content.banner_fore
+				.setw
+					#banner_logo
+						img(alt="sm-logic", src="assets/i/smlogic-logo.png")
+					#banner_text
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+
+			#banner_arrow
+				a(href="#")
+					span.sprite-arrow
+
+	+menu()
+
+	main(role="main")
+		.section.setw
+			h2 Комплексные решения для вашего бизнеса
+			.textSection
+				p Мы предлагаем законченные решения по проектированию, монтажу и вводу в эксплуатацию всего комплекса инженерных систем объектов промышленного и гражданского назначения (холодильные системы и агрегаты, системы управления климатом, вентиляция, электричество, освещение), комплексные решения по мониторингу и диспетчеризации объектов.
+
+			.IconsTexts.grid
+				.grid-4
+					a(href="#")
+						span.sprite-circus
+					a(href="#") Торговые и бизнес центры, стадионы и концертные площадки
+
+				.grid-4
+					a(href="#")
+						span.sprite-houses
+					a(href="#") Жилые комплексы, коттеджи, квартиры
+
+				.grid-4
+					a(href="#")
+						span.sprite-factory
+					a(href="#") Предприятия, производства, склады
+
+				.grid-4
+					a(href="#")
+						span.sprite-music
+					a(href="#") Масштабные мероприятия
+
+			.t-center
+				a.btn-primary(href="#") Сделать запрос на КП
+
+
+		#about.section.banner_back
+			.banner_fore
+				.setw
+					h2 Компания Sm-logic – более 10 лет на рынке
+					.textSection
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+						p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+					.t-center
+						a.btn-primary(href="#") Подробнее о компании
+
+
+		#services.section.setw
+			h2 Наши услуги
+			.textSection
+				p Помимо комплексных решений вы можете обратиться к нам с заказом любой услуги отдельно.
+
+			.IconsTexts.grid
+				.grid-4
+					a(href="#")
+						span.sprite-camera
+					a(href="#") Cистемы безопасности
+
+				.grid-4
+					a(href="#")
+						span.sprite-alarm
+					a(href="#") Пожарные системы
+
+				.grid-4
+					a(href="#")
+						span.sprite-server
+					a(href="#") Системы связи
+
+				.grid-4
+					a(href="#")
+						span.sprite-satellite
+					a(href="#") Телекоммуникационные системы

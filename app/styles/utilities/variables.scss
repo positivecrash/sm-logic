@@ -1,0 +1,65 @@
+$point-mobile: 670px;
+$point-tablet: 820px;
+$point-desktop-s: 1000px;
+$point-desktop-m: 1280px;
+
+$width-base-max: 1280px;
+$width-base-min: $point-desktop-s;
+
+$padding-base-side: 20px;
+
+
+
+//colors
+$color-gray-0: #333;
+$color-gray-1: #5C5C5C;
+$color-gray-2: #95989A;
+$color-gray-3: #EFEFEF;
+
+$color-blue: #0655A3;
+$color-blue-1: #002A4E;
+$color-blue-2: #021F3C;
+$color-blue-3: #011B33;
+$color-blue-4: #135495;
+
+$color-red: #E61334;
+
+$color-text: $color-gray-1;
+$color-lk: $color-blue;
+$color-lk_hover: darken($color-lk, 5%);
+
+$color-table-head: #333; //tmp
+$color-table-border: #333; //tmp
+$color-table-border_hov: #333;
+
+
+
+
+//fonts, types, text
+$font-family-base:  'Helvetica Neue', 'Helvetica', Arial, Tahoma, Verdana, sans-serif;
+$font-family-second: 'Avenir Next', Arial, Tahoma, Verdana, sans-serif;
+
+$scale: 1.5; //для вычисления интерлиньяжа
+$scale-small: 1.2; //например, для вычисления интерлиньяжа заголовков
+$font-base-size: 14px;
+
+
+
+
+//classes for modernizr fallbacks
+$modernizr-nosvg: '.no-svg';
+$modernizr-notouchevents: '.no-touchevents';
+
+$modernizr-noflexbox: '.no-flexbox';
+$modernizr-flexbox: '.flexbox';
+
+$modernizr-nocssanimations: '.no-cssanimations';
+$modernizr-cssanimations: '.cssanimations';
+
+$modernizr-nobackdropfilter: '.no-backdropfilter';
+
+
+
+
+//paths for banners
+$banner-index: "banners/banner1.jpg";

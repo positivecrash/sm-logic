@@ -1,0 +1,477 @@
+@charset "UTF-8";
+@import "compass";
+
+@import "utilities/my_reset";
+@import "utilities/variables";
+@import "utilities/media";
+@import "utilities/extends";
+@import "utilities/mixins";
+
+@import "utilities/sprite";
+
+@import "utilities/text";
+// @import "utilities/plugins";
+
+@import "blocks/animations";
+@import "blocks/forms";
+@import "blocks/header";
+@import "blocks/footer";
+
+
+/*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
+
+
+
+
+
+/*======== BASIC STYLES =========*/
+
+body {
+  background-color: #fff;
+  position: relative;
+}
+
+main[role="main"]{
+
+  position: relative;
+  padding: $vertical-rythm * 4 0 $vertical-rythm * 5;
+  background-color: #fff;
+  z-index: 2;
+
+
+  &#main-index{
+    padding-top: 0;
+  }
+
+}
+
+
+
+/*------- BASIC STYLES - blocks display --------*/
+.setw{ @extend %width_base; }
+.fullw { width: 100%; }
+
+.f-zoom{ @extend %floating-fix; }
+.f-left { float: left; }
+.f-right { float: right; }
+.f-clearfix { @extend %clearfix; }
+
+.clearfix{
+  &:after{
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.d-b{ 
+  display: block;
+
+  img{
+    @extend %inline-block;
+    max-width: 100%;
+  }
+}
+
+.d-ib{ @extend %inline-block; }
+
+
+
+.d-t{
+  display: table;
+  display: table !important;
+}
+.d-t_cell, .d-t_cell_t, .d-t_cell_m{ display: table-cell; }
+.d-t_cell_t{ vertical-align: top; }
+.d-t_cell_m{ vertical-align: middle; }
+
+.contentimg img{
+  @extend %imgblock;
+}
+
+
+.grid{
+  @extend %inlineBlock-fix;
+  margin-left: -4%;
+
+  @include max_tablet(){
+    margin-left: 0;
+  }
+}
+
+.grid-4, .grid-3, .grid-2{
+  @extend %inline-block;
+  @extend %font_base;
+  width: floor(100%/3) - 4;
+  vertical-align: top;
+  box-sizing: border-box;
+  margin-left: 4%;
+
+
+  @include mobile(){
+    width: 100%;
+    margin-left: 0;
+    margin-bottom: $vertical-rythm * 2;
+  }
+}
+
+.grid-2{
+    width: floor(100%/2) - 4;
+
+    @include mobile(){
+      width: 100%;
+    }
+}
+
+.grid-4{
+    width: floor(100%/4) - 4;
+
+    @include mobile(){
+      width: 100%;
+    }
+}
+
+
+.section{
+  margin-top: $vertical-rythm * 5;
+
+  &:first-child{
+    margin-top: 0;
+  }
+}
+
+
+
+/*------- BASIC STYLES - margins --------*/
+
+
+
+
+/*======== END BASIC STYLES =========*/
+
+
+
+
+
+/*======== ELEMENTS =========*/
+
+
+/*------- ELEMENTS - TABS --------*/
+// .js-tabs-head{
+//   font: 20px/#{$scale-small} $font-family-second;
+//   padding-bottom: - map-get($tab, height) - 2;
+//   margin-bottom: $vertical-rythm;
+
+//   a{
+//     @extend %link_noline;
+//     color: rgba($color-light, .7);
+//     margin-left: 30px;
+//     position: relative;
+
+//     &:first-child{
+//       margin-left: 0;
+//     }
+
+//     &.active{
+//       color: $color-light;
+//       cursor: default;
+
+//       &:before{
+//         content: "";
+//         @include get-sprite(tab);
+//         position: absolute;
+//         left: 50%;
+//         margin-left: - map-get($tab, width)/2;
+//         bottom: - map-get($tab, height) - 2;
+//       }
+//     }
+//   }
+// }
+
+
+
+/*------- ELEMENTS - TABLES --------*/
+table{
+  margin: $vertical-rythm*2 0;
+
+  td, th {
+    padding: 10px 0 10px 20px;
+    vertical-align: top;
+   
+    &:first-child{
+      padding-left: 0;
+    }
+  }
+
+  th {
+    padding-bottom: 5px;
+    font-size: 15px;
+    line-height: $scale-small;
+    border-bottom: 1px solid $color-table-head;
+    padding-top: 0;
+    color: $color-table-border;
+  }
+
+  tbody{
+    tr{
+      &:last-child td{
+        border-bottom: 0;
+      }
+
+      &:hover{
+        td { 
+          border-color: $color-table-border_hov; 
+        }
+
+        &.table-header td { 
+          background-color: transparent; 
+          border-color: $color-table-head;
+        }
+      }
+    }
+
+    td{
+      border-bottom: 1px dashed $color-table-border;
+    }
+  }
+
+  th, tfoot td {
+    text-align: left;
+    font-family: $font-family-second;
+    font-weight: normal;
+  }
+
+
+  &.table-nohov{
+    tbody tr:hover{
+      td { 
+        border-color: $color-table-border; 
+        background-color: transparent;
+      }
+    }
+
+    .table-header:hover td{
+      border-color: $color-table-head;
+      background-color: transparent;
+    }
+  }
+
+  &.table-clear{
+    td, tr:hover td{
+      padding: 4px 0 4px 15px;
+   
+      &:first-child{
+        padding-left: 0;
+      }
+
+      &, &:hover{
+        background: none;
+        border: none;
+      }
+    }
+  }
+
+  @include mobile(){
+    &.table-responsive{
+      thead{
+        display: none;
+      }
+
+      tbody{
+        td{
+          display: block;
+          width: 100%;
+          border: 0;
+          padding: 5px 0 0;
+
+          &:before {
+            content: attr(data-th) '\00a0';
+            font-weight: bold;
+            color: $color-table-head;
+            display: inline-block;
+            margin-bottom: 5px;
+            width: 170px;
+            // margin-right: 10px;
+            vertical-align: middle;
+          }
+        }
+
+        tr{
+          td:last-child { 
+            border-bottom: 1px solid $color-table-border;
+            padding-bottom: 5px;
+          }
+          &:last-child td:last-child { border-bottom: 0; }
+        }
+      }
+
+      .table-header td, tfoot td{
+        text-align: center;
+        &:before{
+          width: 0;
+        }
+      }
+    }
+  }
+}
+
+
+
+/*--- FANCYBOX ---*/
+
+
+
+/*--- Banner with foreground ---*/
+%banner_image{
+  background-size: cover;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+}
+
+.banner_back{
+  @extend %banner_image;
+
+  display: flex; //todo: выровнить .banner_fore внутри .banner_back на js для noflexbox
+  align-items: center;
+  justify-content: center;
+}
+
+.banner_fore{
+  width: 100%;
+  overflow: hidden;
+
+  position: relative;
+  z-index: 1;
+
+  background-color: rgba($color-blue-2, .5);
+  color: #fff;
+
+  &:after{
+    backdrop-filter:  blur(5px); //for future supports of backdrop-filter
+    -webkit-backdrop-filter:  blur(5px); //use new backdrop-filter where supported for better looking
+
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+  }
+
+  .setw{
+    position: relative;
+    z-index: 2;
+    max-width: 1000px;
+    margin: 0 auto;
+  
+  }
+}
+
+#{$modernizr-nobackdropfilter}{
+
+    .banner_fore:before{
+      content:"";
+      z-index: 0;
+
+      @extend %banner_image;
+
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      filter: blur(5px);
+        -webkit-filter: blur(5px);
+    }
+
+
+    .banner_fore:after{
+      background-color: rgba($color-blue-2, .5);
+    }
+        
+}
+
+
+/*======== END OF ELEMENTS =========*/
+
+
+
+
+
+/*======== PAGE INDEX =========*/
+
+.IconsTexts{
+  text-align: center;
+  margin-bottom: $vertical-rythm;
+
+  .grid-4{
+    font: normal 16px/#{$scale-small} $font-family-second;
+
+    a{
+      display: block;
+      margin-top: $vertical-rythm/2;
+    }
+
+    a:first-child{
+      height: 96px;
+      margin-top: 0;
+    }
+
+    @include mobile(){
+
+      a{
+        display: block;
+      }
+    }
+  }
+
+  .grid{
+    @include mobile(){
+      margin-top: $vertical-rythm * 2;
+    }
+  }
+}
+
+
+#about{
+  background-image: image-url('banners/banner2.jpg');
+  padding: $vertical-rythm 0;
+  min-height: 320px;
+  box-sizing: border-box;
+
+  .setw{
+    padding-top: $vertical-rythm;
+    padding-bottom: $vertical-rythm;
+  }
+}
+
+#{$modernizr-nobackdropfilter}{
+
+  #about .banner_fore{
+    
+    &:before{
+        background-image: image-url('banners/banner2.jpg');
+    }
+  }
+        
+}
+
+#services{
+  .textSection{
+    text-align: center;
+  }
+
+  .IconsTexts a:first-child{
+      height: 127px;
+  }
+
+}
+
+/*======== END OF PAGE INDEX =========*/
+
+
+
+/*------- OVERSTYLES | ETO DOLJNO BIT V SAMOM NIZU --------*/

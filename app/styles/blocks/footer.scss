@@ -1,0 +1,56 @@
+/*======== FOOTER VARIABLES & MIXINS & EXTENDS =========*/
+
+
+
+/*======== FOOTER BASIC =========*/
+
+footer[role='contentinfo']{
+	position: relative;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	z-index: 1;
+
+	#footer-map_title{
+		position: absolute;
+		top: 20px;
+		left: 50%;
+		width: 266px;
+		margin-left: -133px;
+
+		box-sizing: border-box;
+		padding: 10px 20px;
+		background-color: rgba(#fff, .7);
+		border-radius: 4px;
+		text-align: center;
+	}
+}
+
+#footer-map{
+	height: 184px;
+	
+	iframe{
+		pointer-events: none;
+
+		&.clicked{
+			pointer-events: auto;
+		}
+	}
+}
+
+#footer-bottom{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	background-color: $color-blue-4;
+	color: #fff;
+	text-align: center;
+
+	#footer-bottom_logo{
+		@extend %inline-block;
+		max-width: 145px;
+
+		img{
+			@extend %imgblock;
+		}
+	}
+}

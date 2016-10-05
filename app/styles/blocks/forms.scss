@@ -1,0 +1,26 @@
+//общее для всех инпутов, кнопок, селектов и textarea
+%form_el_base{
+  box-sizing: border-box;
+  font: 14px/#{$scale-small} $font-family-second;
+
+  border-radius: 4px;
+  padding: 15px 30px;
+
+  @extend %link_noline;
+  @extend %inline-block;
+}
+
+
+.btn-primary{
+	@extend %form_el_base;
+	background-color: $color-red;
+	color: #fff;
+	text-transform: uppercase;
+	text-align: center;
+
+
+	&:hover{
+		color: #fff;
+		background-color: saturate($color-red, 5%);
+	}
+}

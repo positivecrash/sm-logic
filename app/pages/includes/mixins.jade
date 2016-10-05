@@ -1,0 +1,33 @@
+mixin menu()
+	#header-nav
+		.setw
+			a#nav-logo.sprite-logoSymbol(href="#")
+
+			ul#header-nav_menu
+				li: a(href="#") О компании
+				//- li: a(href="#") Наши проекты
+
+				li.parent
+					a(href="#") Услуги
+
+					ul
+						li: a(href="#") Системы безопасности
+						li: a(href="#") Пожарные системы
+						li: a(href="#") Системы связи
+						li: a(href="#") Телекоммуникационные системы
+				
+				li: a(href="#") Решения
+				li: a(href="#") Контакты
+				li#header-nav_menu__close: a(href="#") Закрыть меню
+
+
+			div#nav-menu.flexmenu
+				a#header-menuTogl.header-nav_btn(href="#")
+					span.sprite-menu
+
+				a.header-nav_btn(href="#")
+					span.sprite-phone
+
+
+mixin fancyboxes()
+	#fancybox-addToCart.fancybox-b-small

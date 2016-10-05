@@ -1,0 +1,94 @@
+@include font-face("Avenir Next", font-files("AvenirNextCyr-Demi.woff","AvenirNextCyr-Demi.ttf"), "AvenirNextCyr-Demi.eot", normal);
+@include font-face("Avenir Next", font-files("AvenirNextCyr-Bold.woff","AvenirNextCyr-Bold.ttf"), "AvenirNextCyr-Bold.eot", bold);
+
+$vertical-rythm: $font-base-size * $scale;
+
+
+%font_base {
+  font: normal #{$font-base-size} / #{$scale} $font-family-base;
+	word-spacing: normal;
+	letter-spacing: 0;
+}
+
+
+
+/*==========*/
+
+html { font-size: 100%; }
+
+body { 
+	@extend %font_base;
+	color: $color-text; 
+}
+
+
+a { 
+  // @extend %transitionLink;
+  @include hover-link;
+  color: $color-lk;
+
+  &:hover{
+    color: $color-lk_hover;
+  }
+}
+
+
+#{headings()} {
+  margin-bottom: $vertical-rythm;
+  margin-top: $vertical-rythm * 4;
+
+  font-family: $font-family-second;
+  font-weight: normal;
+  line-height: $scale-small;
+  text-align: center;
+
+  &:first-child{
+    margin-top: 0;
+  }
+
+  a{
+    @extend %link_noline;
+  }
+}
+
+
+h1 { font-size: 30px; font-weight: bold; }
+h2 { font-size: 26px; }
+
+
+
+ul, ol {
+  margin-left: 15px;
+}
+
+hr{
+  border: 0;
+  background-color: #333; //tmp
+  height: 1px;
+  margin: $vertical-rythm 0;
+}
+
+blockquote, p, li, .textSection {
+  margin-bottom: $vertical-rythm;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+}
+
+
+
+.t-left{ text-align: left; }
+.t-right{ text-align: right; }
+.t-center{ text-align: center; }
+.t-through { text-decoration: line-through; }
+.t-uppercase{ text-transform: uppercase; }
+
+.nowrap { white-space: nowrap; }
+
+
+.t-bold { font-weight: bold; }
+
+.t-red, a.t-red { color: $color-red; color: $color-red !important; }
+
+.t-small { font-size: 9px; }
