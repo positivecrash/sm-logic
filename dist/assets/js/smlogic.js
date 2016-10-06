@@ -4994,7 +4994,7 @@ jQuery(document).ready(function($){
 
    
 
-    /*---  Scroll 1 screen away ---*/
+    /*===  Scroll 1 screen away ===*/
     $('#banner_arrow').on('click', function(e){
         e.preventDefault();
         e.stopPropagation();
@@ -5002,16 +5002,26 @@ jQuery(document).ready(function($){
     });
 
 
-    /*---  Show logo and phone icon in navigation, only for index  ---*/
+
+    /*===  Some actions while scrolling ===*/
     
     t = true;
 
     var ac = 'a-show'; //class for animations
+    var $nav = $('#header-nav');
+    var navPos = $nav.offset().top;
 
+    //fix navigation at start if it is on top
+    if( navPos == 0 )
+        $nav.addClass('fixed');
+
+
+    //actions
     function ShowLogo(){
 
         if(t == true){
 
+            /*---  for Index page ---*/
             if($('.p-index').length > 0){
 
                 var showPos = 350;
@@ -5020,8 +5030,6 @@ jQuery(document).ready(function($){
 
                     $('#nav-logo').addClass(ac);
                     $('#nav-menu').addClass(ac);
-
-                    //$w.unbind('scroll'); //stop track scroll event for window
                 }
 
                 if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
@@ -5031,6 +5039,7 @@ jQuery(document).ready(function($){
                     $('#services').addClass(ac);
             }
 
+            /*---  Fix footer for pages with welcome screen ---*/
             var $f = $('footer[role="contentinfo"]');
             var $m = $('main[role="main"]');
 
@@ -5045,13 +5054,22 @@ jQuery(document).ready(function($){
                 }
             }
 
+            /*---  Fix navigation on top ---*/
+
+            if( $w.scrollTop() >= navPos)
+                $nav.addClass('fixed');
+            else
+                $nav.removeClass('fixed');
+
 
             t = false;
-            setTimeout(function(){t = true}, 50);
+            setTimeout(function(){t = true}, 30);
         }
     }
 
     $w.bind('scroll', ShowLogo); 
+
+    /*===  end of Some actions while scrolling ===*/
 
 
 

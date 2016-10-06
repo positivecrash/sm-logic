@@ -8,6 +8,8 @@ var gulp             = require('gulp'),
 	rename           = require('gulp-rename'),
 	concat           = require('gulp-concat'),
 	jade             = require('gulp-jade'),
+  iconfont         = require('gulp-iconfont'),
+  iconfontCss      = require('gulp-iconfont-css'),
 	livereload       = require('gulp-livereload'),
 	svgSprite        = require("gulp-svg-sprite"),
 	svg2png          = require('gulp-svg2png'),
@@ -60,6 +62,28 @@ gulp.task('templates', function() {
       pretty: true
     }))
     .pipe(gulp.dest('dist/'))
+});
+
+//iconfonts
+gulp.task('iconfont', function(){
+  gulp.src(['app/fonticons/*.svg'])
+    .pipe(iconfontCss({
+      fontName: fontName,
+      fontPath: '../fonts/',
+      path: 'app/styles/templates/iconsTemplate.scss',
+      targetPath: '../../../app/styles/utilities/icons.scss'
+    }))
+    .pipe(iconfont({
+      fontName: fontName,
+      normalize: true,
+      appendUnicode: true,
+      fontHeight: 1001,
+      // timestamp: runTimestamp,
+      // appendCodepoints: true,
+      formats: ['svg', 'ttf', 'eot', 'woff', 'woff2']
+     }))
+    .pipe(gulp.dest('dist/assets/fonts'));
+    // .pipe(livereload());
 });
 
 
@@ -133,10 +157,13 @@ gulp.task('live', function() {
 	//svg and png sprites
   gulp.watch(['app/spritesrc/basic/*.svg'], ['sprite']);
 
+  //watch font icon files
+  gulp.watch('app/fonticons/*.svg', ['iconfont']);
+
 	//font generate if ttf changes
 	gulp.watch('dist/assets/fonts/*.ttf', ['fonts']);
 });
 
 
 //default
-gulp.task('default', ['scripts', 'styles', 'templates', 'sprite', 'fonts', 'live']);
+gulp.task('default', ['scripts', 'styles', 'templates', 'sprite', 'iconfont', 'fonts', 'live']);

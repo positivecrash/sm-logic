@@ -1,7 +1,7 @@
 mixin menu()
 	#header-nav
 		.setw
-			a#nav-logo.sprite-logoSymbol(href="#")
+			a#nav-logo.sprite-logoSymbol(href="index.html")
 
 			ul#header-nav_menu
 				li: a(href="#") О компании
@@ -11,7 +11,7 @@ mixin menu()
 					a(href="#") Услуги
 
 					ul
-						li: a(href="#") Системы безопасности
+						li: a(href="service_1.html") Системы безопасности
 						li: a(href="#") Пожарные системы
 						li: a(href="#") Системы связи
 						li: a(href="#") Телекоммуникационные системы
@@ -29,5 +29,13 @@ mixin menu()
 					span.sprite-phone
 
 
+mixin howItWorks()
+	.section.setw
+		h3 Как мы работаем
+
+		.t-center
+			a.btn-primary(href="#") Оставить заявку
+
+
 mixin fancyboxes()
-	#fancybox-addToCart.fancybox-b-small
+	p(style="display:none") rr

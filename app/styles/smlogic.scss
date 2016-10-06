@@ -8,6 +8,7 @@
 @import "utilities/mixins";
 
 @import "utilities/sprite";
+@import "utilities/icons";
 
 @import "utilities/text";
 // @import "utilities/plugins";
@@ -34,7 +35,7 @@ body {
 main[role="main"]{
 
   position: relative;
-  padding: $vertical-rythm * 4 0 $vertical-rythm * 5;
+  padding: $vertical-rythm * 4 0 0;
   background-color: #fff;
   z-index: 3;
 
@@ -43,6 +44,14 @@ main[role="main"]{
     padding-top: 0;
   }
 
+}
+
+.marginBotFix{  //fixes margin-bottom for last elements
+  &:after{
+    content:"";
+    height: 1px;
+    display: block;
+  }
 }
 
 
@@ -133,11 +142,7 @@ main[role="main"]{
 
 
 .section{
-  margin-top: $vertical-rythm * 5;
-
-  &:first-child{
-    margin-top: 0;
-  }
+  margin-bottom: $vertical-rythm * 5;
 }
 
 
@@ -322,19 +327,18 @@ table{
 
 
 /*--- Banner with foreground ---*/
-%banner_image{
-  background-size: cover;
-  background-position: 50% 50%;
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-}
-
 .banner_back{
   @extend %banner_image;
 
   display: flex; //todo: выровнить .banner_fore внутри .banner_back на js для noflexbox
   align-items: center;
   justify-content: center;
+}
+
+#scrn-1 .banner_back{
+  position: fixed;
+  left: 0;
+  right: 0;
 }
 
 .banner_fore{
@@ -395,19 +399,12 @@ table{
 }
 
 
-/*======== END OF ELEMENTS =========*/
-
-
-
-
-
-/*======== PAGE INDEX =========*/
-
+/*Text columns with Icons (for index) */
 .IconsTexts{
   text-align: center;
   margin-bottom: $vertical-rythm;
 
-  .grid-4{
+  .grid-3, .grid-4{
     font: normal 16px/#{$scale-small} $font-family-second;
 
     a{
@@ -438,6 +435,117 @@ table{
   }
 }
 
+
+/*Text columns with Font Icons (for services) */
+.FontIconsTexts{
+  text-align: center;
+
+  .grid-3, .grid-4{
+    margin-bottom: $vertical-rythm*2;
+  }
+}
+
+.FontIconsTexts-title{
+  margin-bottom: $vertical-rythm;
+
+  *[class*='i-']{
+    color: $color-blue-4;
+    font-size: 70px;
+  }
+}
+
+.FontIconsTexts-text{
+  font-size: $font-base-size - 2;
+  line-height: $scale-small;
+}
+
+@include mobile(){
+  .FontIconsTexts{
+    text-align: left;
+  }
+
+  .FontIconsTexts-title *[class*='i-'], .FontIconsTexts-title p{
+    display: inline-block;
+    vertical-align: middle;
+  }
+
+  .FontIconsTexts-title{
+    margin-bottom: $vertical-rythm/2;
+    white-space: nowrap;
+
+    p{
+      white-space: normal;
+    }
+
+    *[class*='i-']{
+      width: 40px;
+      font-size: 27px;
+    }
+  }
+}
+
+
+/*Gray blocks*/
+.section-gray{
+  background-color: $color-gray-4;
+  padding-top: $vertical-rythm * 2;
+  padding-bottom: $vertical-rythm * 2;
+
+  position: relative;
+
+  font-weight: bold;
+
+  &:last-child{
+    margin-bottom: 0;
+  }
+
+  &:after{
+    content:"";
+    @include get-sprite(smLogic_dec);
+
+    position: absolute;
+    right: 0;
+    bottom: $vertical-rythm * 2;
+    z-index: 0;
+  }
+
+  *{
+    position: relative;
+    z-index: 1;
+  }
+
+  ul{
+    column-count: 3;
+    margin: 0;
+
+    li{
+      break-inside: avoid-column;
+      margin-left: 30px;
+      margin-bottom: 0;
+      padding-bottom: $vertical-rythm;
+    }
+
+    @include tablet(){
+      column-count: 2;
+    }
+
+    @include mobile(){
+      column-count: 1;
+    }
+  }
+
+  .btn-primary{
+    margin-top: $vertical-rythm;
+  }
+}
+
+/*======== END OF ELEMENTS =========*/
+
+
+
+
+
+/*======== PAGE INDEX =========*/
 
 #about{
   background-image: image-url('banners/banner2.jpg');
@@ -474,6 +582,52 @@ table{
 }
 
 /*======== END OF PAGE INDEX =========*/
+
+
+/*======== SERVICES =========*/
+.p-service{
+  .banner_fore{
+    &, &:after{
+      background: none;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+
+    .setw{
+      max-width: 700px;
+    }
+  }
+
+  .banner_back{
+    &:after{
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+
+      background-color: rgba($color-blue-2, .4);
+      backdrop-filter:  blur(2px);
+      -webkit-backdrop-filter:  blur(2px);
+    }
+  }
+
+  #banner_arrow{
+    z-index: 10;
+  }
+
+  #banner-inside_text{
+    font: 30px/#{$scale-small} #{$font-family-second};
+    margin-bottom: $vertical-rythm*2;
+  }
+}
+
+/*service 1*/
+.service-1 .banner_back { background-image: image-url('banners/banner_service_1.jpg'); }
+
+
+/*======== END OF SERVICES =========*/
 
 
 

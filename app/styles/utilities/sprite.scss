@@ -1,5 +1,5 @@
 $icons: (
-    sprite: (width: 132.546px, height: 971px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
+    sprite: (width: 197.5px, height: 1309px, pngPath: '../i/sprite.png', svgPath: '../i/sprite.svg'),
     alarm: (width: 106.016px, height: 122.585px, backgroundX: 0px, backgroundY: 0px),
     arrow: (width: 30.409px, height: 17.334px, backgroundX: 0px, backgroundY: -123px),
     arrowS: (width: 16.04px, height: 8.601px, backgroundX: 0px, backgroundY: -141px),
@@ -13,6 +13,7 @@ $icons: (
     phone: (width: 14.616px, height: 25.16px, backgroundX: 0px, backgroundY: -707px),
     satellite: (width: 92.235px, height: 126.495px, backgroundX: 0px, backgroundY: -733px),
     server: (width: 112.197px, height: 110.262px, backgroundX: 0px, backgroundY: -860px),
+    smLogic_dec: (width: 197.5px, height: 337.6px, backgroundX: 0px, backgroundY: -971px),
 );
 
 $sprite: map-get($icons, sprite);
@@ -68,4 +69,7 @@ $sprite: map-get($icons, sprite);
 }
 .sprite-server{
 	@include get-sprite(server);
+}
+.sprite-smLogic_dec{
+	@include get-sprite(smLogic_dec);
 }

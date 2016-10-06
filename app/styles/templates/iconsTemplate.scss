@@ -18,6 +18,7 @@
 	text-decoration: none;
 	text-transform: none;
 	display: inline-block;
+	line-height: 1;
 }
 
 %icon {
@@ -35,6 +36,8 @@
 }
 
 @mixin icon($filename, $insert: before, $extend: true) {
+	@extend %icon;
+	
 	&:#{$insert} {
 		content: icon-char($filename);
 	}

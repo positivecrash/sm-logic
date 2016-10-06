@@ -5,7 +5,7 @@ block html
 	- var pageclass = 'p-index'
 
 block head
-	- var pageTitle = 'Инженерная компания Sm-logic Санкт-Петербург'
+	- var pageTitle = 'Главная страница'
 
 block content
 	#scrn-1
@@ -23,7 +23,7 @@ block content
 
 	+menu()
 
-	main(role="main")
+	main(role="main").marginBotFix
 		#solutions.section.setw
 			h2 Комплексные решения для вашего бизнеса
 			.textSection
