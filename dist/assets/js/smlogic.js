@@ -5003,31 +5003,55 @@ jQuery(document).ready(function($){
 
 
     /*---  Show logo and phone icon in navigation, only for index  ---*/
-    if($('.p-index').length > 0){
-        if(!$('#nav-logo').hasClass('a-show'))
-            t = true;
+    
+    t = true;
 
-        var $nav = $('#header-nav');
-        var $text = $('#banner .setw');
-        var BannerTextPos = $text.offset().top + $text.height() - 450;
+    var ac = 'a-show'; //class for animations
 
-        function ShowLogo(){
-            if(t == true){
+    function ShowLogo(){
 
-                console.log('track');
+        if(t == true){
 
-                if( $w.scrollTop() > BannerTextPos){
+            if($('.p-index').length > 0){
 
-                    $('#nav-logo').addClass('a-show');
-                    $('#nav-menu').addClass('a-show');
+                var showPos = 350;
+
+                if( $w.scrollTop() > showPos){
+
+                    $('#nav-logo').addClass(ac);
+                    $('#nav-menu').addClass(ac);
+
+                    //$w.unbind('scroll'); //stop track scroll event for window
                 }
 
-                setTimeout(function(){t = true}, 50);
-            }
-        }
+                if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
+                    $('#solutions').addClass(ac);
 
-        $w.on('scroll', ShowLogo); 
+                if ($w.scrollTop() > ($('#services').offset().top - showPos))
+                    $('#services').addClass(ac);
+            }
+
+            var $f = $('footer[role="contentinfo"]');
+            var $m = $('main[role="main"]');
+
+            if($('#scrn-1').length > 0){
+                if( $w.scrollTop() > $('#scrn-1').height()){
+                    $f.addClass('fixed');
+                    $m.css('margin-bottom', $f.height());
+                }
+                else{
+                    $f.removeClass('fixed');
+                    $m.css('margin-bottom', 0);
+                }
+            }
+
+
+            t = false;
+            setTimeout(function(){t = true}, 50);
+        }
     }
+
+    $w.bind('scroll', ShowLogo); 
 
 
 

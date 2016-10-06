@@ -4,6 +4,12 @@
 
 /*======== FOOTER BASIC =========*/
 
+#safariFix{
+	height:1px;
+	position:relative;
+	top:-1px;
+}
+
 footer[role='contentinfo']{
 	position: relative;
 	bottom: 0;
@@ -23,6 +29,11 @@ footer[role='contentinfo']{
 		background-color: rgba(#fff, .7);
 		border-radius: 4px;
 		text-align: center;
+	}
+
+	&.fixed{
+		position: fixed;
+		z-index: 2;
 	}
 }
 

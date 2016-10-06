@@ -73,7 +73,7 @@ html, body, #scrn-1, #banner{
 	$ArrowFadeDelay: $animate-time + $animate-delay + 1;
 	$ArrowBounceDelay: $ArrowFadeDelay + 0.2;
 	opacity: 0;
-	animation:  .2s fadeIn $ArrowFadeDelay ease-out forwards, 1.3s bounce $ArrowBounceDelay ease-out;
+	animation:  .2s fadeIn $ArrowFadeDelay ease-out forwards, 1s bounce $ArrowBounceDelay ease-out;
 
 	@include max_tablet(){
 		display: none;
@@ -239,16 +239,27 @@ html, body, #scrn-1, #banner{
 
 		    animation: $animate-time fadeOut $animate-delay ease-out forwards;
 		  }
+
+		  #banner .banner_fore{
+		  	&, &:after{
+				background-color: rgba($color-blue-2, 0);
+				animation: $animate-time bannerContent_fadeIn $animate-delay ease-out forwards;
+			}
+		  }
 	}
 
 
 	&#{$modernizr-cssanimations}{
 		&#{$modernizr-nobackdropfilter}{
 	  	
-			#banner .banner_fore:before{
-				opacity: 0;
-				$somedelay: $animate-delay + $animate-time - 0.2;
-				animation: .3s fadeIn $somedelay ease-out forwards;
+			#banner .banner_fore{
+				
+				&:before{
+					$somedelay: $animate-delay + $animate-time - 0.2;
+
+					opacity: 0;
+					animation: .3s fadeIn $somedelay ease-out forwards;
+				}
 			}
 		}
 	

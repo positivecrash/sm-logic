@@ -18,6 +18,24 @@
   }
 }
 
+@keyframes shiftIcons {
+  0% {
+    left: 400px;
+  }
+  100% {
+    left: 0;
+  }
+}
+
+@keyframes shiftIcons_V {
+  0% {
+    top: 280px;
+  }
+  100% {
+    top: 0;
+  }
+}
+
 @keyframes bannerContent_fadeIn {
   0% {
     background-color: rgba($color-blue-2, 0);
@@ -39,17 +57,65 @@
   }
 }
 
-.a-show{
-  animation:  .5s fadeIn ease-out forwards;
-}
 
 
-.p-index{
-  &#{$modernizr-cssanimations}{
-    #nav-logo, #nav-menu{
-      @include min_tablet(){
-        opacity: 0;
-      }
+#{$modernizr-cssanimations}{
+
+  @include min_tablet(){
+    //Animations for Index page
+    &.p-index{
+      
+        #nav-logo, #nav-menu, 
+        #solutions .IconsTexts span, #solutions .IconsTexts a:last-child, #solutions .btn-primary,
+        #services .IconsTexts span, #services .IconsTexts a:last-child
+        {
+          opacity: 0;
+        }
+
+
+        #nav-logo, #nav-menu{
+          &.a-show{
+            animation:  .5s fadeIn ease-out forwards;
+          }
+        }
+
+        #solutions.a-show{
+            .sprite-circus{
+              animation:  .5s shiftIcons ease-out forwards, .7s fadeIn .2s ease-out forwards;
+            }
+
+            .sprite-houses{
+              animation:  .5s shiftIcons .4s ease-out forwards, .7s fadeIn .4s ease-out forwards;
+            }
+
+            .sprite-factory{
+              animation:  .5s shiftIcons .6s ease-out forwards, .7s fadeIn .6s ease-out forwards;
+            }
+
+            .sprite-music{
+              animation:  .5s shiftIcons .8s ease-out forwards, .7s fadeIn 1s ease-out forwards;
+            }
+
+            .IconsTexts a:last-child{
+              animation:  .7s fadeIn 1.1s ease-out forwards;
+            }
+
+            .btn-primary{
+              animation:  .2s fadeIn 2s ease-out forwards;
+            }
+        }
+
+        #services.a-show{
+          span{
+            animation:  .5s shiftIcons_V ease-out forwards, .7s fadeIn .2s ease-out forwards;
+          }
+
+          .IconsTexts a:last-child{
+            animation:  .7s fadeIn .7s ease-out forwards;
+          }
+        }
+
     }
+
   }
 }

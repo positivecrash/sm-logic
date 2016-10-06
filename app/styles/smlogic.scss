@@ -36,7 +36,7 @@ main[role="main"]{
   position: relative;
   padding: $vertical-rythm * 4 0 $vertical-rythm * 5;
   background-color: #fff;
-  z-index: 2;
+  z-index: 3;
 
 
   &#main-index{
@@ -384,7 +384,7 @@ table{
       bottom: 0;
 
       filter: blur(5px);
-        -webkit-filter: blur(5px);
+      -webkit-filter: blur(5px);
     }
 
 
@@ -418,6 +418,9 @@ table{
     a:first-child{
       height: 96px;
       margin-top: 0;
+      overflow: hidden;
+
+      span { position: relative; }
     }
 
     @include mobile(){

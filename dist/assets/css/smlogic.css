@@ -245,14 +245,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .btn-primary, h1 a:hover, h2 a:hover, h3 a:h
 
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Demi.eot?1475669701');
-  src: url('../fonts/AvenirNextCyr-Demi.eot?&1475669701#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1475669701') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?1475744965');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?&1475744965#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1475744965') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Bold.eot?1475669701');
-  src: url('../fonts/AvenirNextCyr-Bold.eot?&1475669701#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1475669701') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?1475744965');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?&1475744965#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1475744965') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
   font-weight: bold;
 }
 body, .grid-4, .grid-3, .grid-2 {
@@ -390,6 +390,38 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
     opacity: 1;
   }
 }
+@-webkit-keyframes shiftIcons {
+  0% {
+    left: 400px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@keyframes shiftIcons {
+  0% {
+    left: 400px;
+  }
+  100% {
+    left: 0;
+  }
+}
+@-webkit-keyframes shiftIcons_V {
+  0% {
+    top: 280px;
+  }
+  100% {
+    top: 0;
+  }
+}
+@keyframes shiftIcons_V {
+  0% {
+    top: 280px;
+  }
+  100% {
+    top: 0;
+  }
+}
 @-webkit-keyframes bannerContent_fadeIn {
   0% {
     background-color: rgba(2, 31, 60, 0);
@@ -434,14 +466,47 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
             transform: translateY(5px);
   }
 }
-.a-show {
-  -webkit-animation: .5s fadeIn ease-out forwards;
-          animation: .5s fadeIn ease-out forwards;
-}
-
 @media screen and (min-width: 820px) {
-  .p-index.cssanimations #nav-logo, .p-index.cssanimations #nav-menu {
+  .cssanimations.p-index #nav-logo, .cssanimations.p-index #nav-menu,
+  .cssanimations.p-index #solutions .IconsTexts span, .cssanimations.p-index #solutions .IconsTexts a:last-child, .cssanimations.p-index #solutions .btn-primary,
+  .cssanimations.p-index #services .IconsTexts span, .cssanimations.p-index #services .IconsTexts a:last-child {
     opacity: 0;
+  }
+  .cssanimations.p-index #nav-logo.a-show, .cssanimations.p-index #nav-menu.a-show {
+    -webkit-animation: .5s fadeIn ease-out forwards;
+            animation: .5s fadeIn ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .sprite-circus {
+    -webkit-animation: .5s shiftIcons ease-out forwards, .7s fadeIn .2s ease-out forwards;
+            animation: .5s shiftIcons ease-out forwards, .7s fadeIn .2s ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .sprite-houses {
+    -webkit-animation: .5s shiftIcons .4s ease-out forwards, .7s fadeIn .4s ease-out forwards;
+            animation: .5s shiftIcons .4s ease-out forwards, .7s fadeIn .4s ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .sprite-factory {
+    -webkit-animation: .5s shiftIcons .6s ease-out forwards, .7s fadeIn .6s ease-out forwards;
+            animation: .5s shiftIcons .6s ease-out forwards, .7s fadeIn .6s ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .sprite-music {
+    -webkit-animation: .5s shiftIcons .8s ease-out forwards, .7s fadeIn 1s ease-out forwards;
+            animation: .5s shiftIcons .8s ease-out forwards, .7s fadeIn 1s ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .IconsTexts a:last-child {
+    -webkit-animation: .7s fadeIn 1.1s ease-out forwards;
+            animation: .7s fadeIn 1.1s ease-out forwards;
+  }
+  .cssanimations.p-index #solutions.a-show .btn-primary {
+    -webkit-animation: .2s fadeIn 2s ease-out forwards;
+            animation: .2s fadeIn 2s ease-out forwards;
+  }
+  .cssanimations.p-index #services.a-show span {
+    -webkit-animation: .5s shiftIcons_V ease-out forwards, .7s fadeIn .2s ease-out forwards;
+            animation: .5s shiftIcons_V ease-out forwards, .7s fadeIn .2s ease-out forwards;
+  }
+  .cssanimations.p-index #services.a-show .IconsTexts a:last-child {
+    -webkit-animation: .7s fadeIn .7s ease-out forwards;
+            animation: .7s fadeIn .7s ease-out forwards;
   }
 }
 
@@ -500,8 +565,8 @@ html, body, #scrn-1, #banner {
   border-radius: 25px;
   overflow: hidden;
   opacity: 0;
-  -webkit-animation: 0.2s fadeIn 3.2s ease-out forwards, 1.3s bounce 3.4s ease-out;
-          animation: 0.2s fadeIn 3.2s ease-out forwards, 1.3s bounce 3.4s ease-out;
+  -webkit-animation: 0.2s fadeIn 3.2s ease-out forwards, 1s bounce 3.4s ease-out;
+          animation: 0.2s fadeIn 3.2s ease-out forwards, 1s bounce 3.4s ease-out;
 }
 #banner_arrow, #banner_arrow a {
   width: 50px;
@@ -657,6 +722,11 @@ html, body, #scrn-1, #banner {
   -webkit-animation: 1.2s fadeOut 1s ease-out forwards;
           animation: 1.2s fadeOut 1s ease-out forwards;
 }
+.p-index.cssanimations #banner .banner_fore, .p-index.cssanimations #banner .banner_fore:after {
+  background-color: rgba(2, 31, 60, 0);
+  -webkit-animation: 1.2s bannerContent_fadeIn 1s ease-out forwards;
+          animation: 1.2s bannerContent_fadeIn 1s ease-out forwards;
+}
 .p-index.cssanimations.no-backdropfilter #banner .banner_fore:before {
   opacity: 0;
   -webkit-animation: 0.3s fadeIn 2s ease-out forwards;
@@ -761,6 +831,12 @@ html, body, #scrn-1, #banner {
 }
 /*======== FOOTER VARIABLES & MIXINS & EXTENDS =========*/
 /*======== FOOTER BASIC =========*/
+#safariFix {
+  height: 1px;
+  position: relative;
+  top: -1px;
+}
+
 footer[role='contentinfo'] {
   position: relative;
   bottom: 0;
@@ -779,6 +855,10 @@ footer[role='contentinfo'] #footer-map_title {
   background-color: rgba(255, 255, 255, 0.7);
   border-radius: 4px;
   text-align: center;
+}
+footer[role='contentinfo'].fixed {
+  position: fixed;
+  z-index: 2;
 }
 
 #footer-map {
@@ -813,7 +893,7 @@ main[role="main"] {
   position: relative;
   padding: 84px 0 105px;
   background-color: #fff;
-  z-index: 2;
+  z-index: 3;
 }
 main[role="main"]#main-index {
   padding-top: 0;
@@ -1081,6 +1161,10 @@ table.table-clear td, table.table-clear td:hover, table.table-clear tr:hover td,
 .IconsTexts .grid-4 a:first-child {
   height: 96px;
   margin-top: 0;
+  overflow: hidden;
+}
+.IconsTexts .grid-4 a:first-child span {
+  position: relative;
 }
 @media screen and (max-width: 670px) {
   .IconsTexts .grid-4 a {
