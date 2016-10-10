@@ -1,0 +1,34 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageclass = 'p-text'
+
+block head
+	- var pageTitle = 'О компании'
+
+block content
+	+menu()
+
+	main(role="main").marginBotFix
+		.setw
+			h1 О компании
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+			p Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. 
+
+			h2 Наши клиенты
+
+			ul.t-bold
+				li Автомобильный завод в Шушарах (г.Санкт-Петербург)
+				li Завод 20АРЗ (г. Пушкин)
+				li Форейт (системы “умный дом”) (г. Санкт-Петербург)
+				li Сеть ресторанов Чаплин (г. Санкт-Петербург)
+				li Проектное бюро Декор (Шесть распределенных офисов, три в Пушкине, три в Санкт-Петербурге)
+				li ООО «Классика»
+				li ООО "Декор"
+				li ООО "КэйДиДиАйРус"
+				li Японское консульство в г.Санкт-Петербуре
+				li ООО "Юникосметик"

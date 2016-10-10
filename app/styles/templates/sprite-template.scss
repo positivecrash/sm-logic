@@ -15,6 +15,7 @@ $sprite: map-get($icons, sprite);
     height: map-get($spritename, height);
     background-image: url(map-get($sprite, svgPath));
     background-position: map-get($spritename, backgroundX) map-get($spritename, backgroundY);
+    background-repeat: no-repeat;
 
     #{$modernizr-nosvg} & { background-image: url(map-get($sprite, pngPath)); }
 }

@@ -1,0 +1,65 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageclass = 'p-service service-3'
+
+block head
+	- var pageTitle = 'Проектирование и монтаж автоматизированных систем связи'
+
+block content
+	+menu()
+
+	#scrn-1
+		
+		.banner_back
+			.banner_fore
+				.setw
+					#banner-inside_text
+						h1 Проектирование и монтаж автоматизированных систем связи
+
+					.t-center
+						a.btn-primary(href="#") Сделать запрос на КП
+
+			#banner_arrow
+				a(href="#")
+					span.sprite-arrow
+	
+
+	main(role="main").marginBotFix
+		.section.setw
+			h3 Направления нашей деятельности по организации систем связи:
+
+			.FontIconsTexts.grid
+				.grid-3
+					.FontIconsTexts-title
+						.i-radio
+						p
+							strong Радиовещание
+					.FontIconsTexts-text
+				
+				.grid-3
+					.FontIconsTexts-title
+						.i-technology
+						p
+							strong Эфирное и спутниковое телевидение
+					.FontIconsTexts-text
+				
+				.grid-3
+					.FontIconsTexts-title
+						.i-time
+						p
+							strong Электрочасофикация
+					.FontIconsTexts-text
+				
+				.grid-3
+					.FontIconsTexts-title
+						.i-disabled
+						p
+							strong Технические средства связи и информации для инвалидов
+					.FontIconsTexts-text
+
+
+		.section-gray
+			+howItWorks
+		

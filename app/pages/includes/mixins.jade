@@ -4,19 +4,19 @@ mixin menu()
 			a#nav-logo.sprite-logoSymbol(href="index.html")
 
 			ul#header-nav_menu
-				li: a(href="#") О компании
+				li: a(href="about.html") О компании
 				//- li: a(href="#") Наши проекты
 
 				li.parent
-					a(href="#") Услуги
+					a(href="services.html") Услуги
 
 					ul
 						li: a(href="service_1.html") Системы безопасности
-						li: a(href="#") Пожарные системы
-						li: a(href="#") Системы связи
-						li: a(href="#") Телекоммуникационные системы
+						li: a(href="service_2.html") Пожарные системы
+						li: a(href="service_3.html") Системы связи
+						li: a(href="service_4.html") Телекоммуникационные системы
 				
-				li: a(href="#") Решения
+				li: a(href="solutions.html") Решения
 				li: a(href="#") Контакты
 				li#header-nav_menu__close: a(href="#") Закрыть меню
 
@@ -30,8 +30,34 @@ mixin menu()
 
 
 mixin howItWorks()
+
 	.section.setw
 		h3 Как мы работаем
+
+		.blocks-wrap
+			.blocks
+				.blocks-i.active
+					.blocks-i_n 1
+					.blocks-i_t Ваш звонок или 
+						a(href="#") заявка на сайте
+				.blocks-i
+					.blocks-i_n 2
+					.blocks-i_t Пишем техническое задание
+				.blocks-i
+					.blocks-i_n 3
+					.blocks-i_t Подписываем договор
+
+
+			.blocks
+				.blocks-i
+					.blocks-i_n 4
+					.blocks-i_t Производим работы в соответствии с ТЗ и договором
+				.blocks-i
+					.blocks-i_n 5
+					.blocks-i_t Проводим технадзор
+				.blocks-i
+					.blocks-i_n 6
+					.blocks-i_t Сдаем объект
 
 		.t-center
 			a.btn-primary(href="#") Оставить заявку

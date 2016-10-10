@@ -4891,72 +4891,51 @@ jQuery(document).ready(function($){
 
 	var $w = $(window);
 	var $d = $(document);
-    var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
+    var $footer = $('footer[role="contentinfo"]');
+    var $main = $('main[role="main"]');
 
+    var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
+    var mainPadTop = 84; // padding-top for main, for summ while fixing menu
+    var mobile = 670; //media query
 
 	/*===  TABS ===*/
 
-	// $.fn.simpletabs = function (options) {
+	$.fn.tabs = function (options) {
 
- //        var settings = $.extend({
- //            classHeadWrap: '.js-tabs-head',
- //            classTabsWrap: '.js-tabs-content',
- //            classNameActive: 'active',
- //            dataTabId: 'jssimple'
- //        }, options);
-
-
- //        return this.each(function () {
- //        	var $tabWrap = $(this); //get Tabs container
- //        	var $tabsTogWrap = $(settings.classHeadWrap); //get container for togglers
- //        	var $tabsTog = $tabsTogWrap.children(); //get Tabs togglers
- //        	var $tabs = $(settings.classTabsWrap).children(); //get Tabs
-
- //        	var countActive = 0;
- //        	var activeTab = '';
+        var settings = $.extend({
+            cTog:               '.tab_tog', //tab toogler
+            cText:              '.tab_text', //tab content
+            cCont:              '.tab-content', //desktop block
+            elCur:              '.grid-4', //current tab element
+            cCur:               'current' //current tab class
+        }, options);
 
 
- //        	//count active tab togglers
- //        	$tabsTog.each(function(){
- //        		if($(this).hasClass(settings.classNameActive)){
- //        			activeTab = $(this).data(settings.dataTabId);
- //        			countActive++;
- //        		}
- //        	});
+        return this.each(function () {
+            $el = $(this);
+            $tog = $el.find(settings.cTog);
+        	$cont = $el.find(settings.cCont);
 
- //        	//if there is no active tab OR if there are a few active tabs, set it fo the first element
- //        	if (countActive == 0 || countActive > 1){
- //        		$tabsTog.removeClass(settings.classNameActive);
- //        		$tabsTogWrap.first().addClass(settings.classNameActive);
- //        		activeTab = $tabsTogWrap.first().data(settings.dataTabId);
- //        	}
+            $cont.html($el.find(settings.cText).first().html()); //copy tab content to desktop block
+            $el.find(settings.elCur).first().addClass(settings.cCur);
 
- //        	//open active tab
- //        	if (activeTab != ''){
- //        		$tabs.hide();
- //        		$(settings.classTabsWrap).find('#' + activeTab).show();
- //        	}
+            $tog.on('click', function(e){
+                e.preventDefault();
+                e.stopPropagation();
 
- //        	$tabsTog.on('click', function(e){
- //        		e.preventDefault();
-	// 			e.stopPropagation();
+                $cont.html($(this).parent().find(settings.cText).html()); //copy tab content to desktop block
+                
+                //set class for current tab
+                $(settings.elCur).removeClass(settings.cCur);
+                $(this).parents(settings.elCur).addClass(settings.cCur);
+            });
+        });
+    };
 
-	// 			if(!$(this).hasClass(settings.classNameActive)){
 
-	// 				$tabsTog.removeClass(settings.classNameActive);
-	// 				$(this).addClass(settings.classNameActive);
-	// 				activeTab = $(this).data(settings.dataTabId);
-
-	// 				$tabs.hide();	
-	// 				$(settings.classTabsWrap).find('#' + activeTab).show();
-	// 			}
- //        	});
- //        });
- //    };
-
-	// if ($('.js-tabs').length > 0) {
-	// 	$('.js-tabs').simpletabs();
-	// }
+	if ($('.tabs').length > 0) {
+		$('.tabs').tabs();
+	}
 	/*===  END TABS ===*/
 
 
@@ -5012,8 +4991,10 @@ jQuery(document).ready(function($){
     var navPos = $nav.offset().top;
 
     //fix navigation at start if it is on top
-    if( navPos == 0 )
+    if( navPos == 0 ){
         $nav.addClass('fixed');
+        $main.css('padding-top', mainPadTop + $nav.height() );
+    }
 
 
     //actions
@@ -5040,26 +5021,28 @@ jQuery(document).ready(function($){
             }
 
             /*---  Fix footer for pages with welcome screen ---*/
-            var $f = $('footer[role="contentinfo"]');
-            var $m = $('main[role="main"]');
 
             if($('#scrn-1').length > 0){
                 if( $w.scrollTop() > $('#scrn-1').height()){
-                    $f.addClass('fixed');
-                    $m.css('margin-bottom', $f.height());
+                    $footer.addClass('fixed');
+                    $main.css('margin-bottom', $footer.height());
                 }
                 else{
-                    $f.removeClass('fixed');
-                    $m.css('margin-bottom', 0);
+                    $footer.removeClass('fixed');
+                    $main.css('margin-bottom', 0);
                 }
             }
 
             /*---  Fix navigation on top ---*/
 
-            if( $w.scrollTop() >= navPos)
+            if( $w.scrollTop() >= navPos){
                 $nav.addClass('fixed');
-            else
+                $main.css('padding-top', mainPadTop + $nav.height() );
+            }
+            else{
                 $nav.removeClass('fixed');
+                $main.css('padding-top', mainPadTop );
+            }
 
 
             t = false;
@@ -5076,28 +5059,32 @@ jQuery(document).ready(function($){
     /*===  HEADER MENU ===*/
     /*---  Submenu interactions ---*/
     $('#header-nav_menu .parent > a').on('click', function(e){
-        e.preventDefault();
-        e.stopPropagation();
         
-        var $this = $(this);
-        var $subm = $(this).parent('li').find('ul');
-        var active = 'active';
+        if($w.width() > mobile){
+            e.preventDefault();
+            e.stopPropagation();
 
-        if($subm.is(':hidden')){
-            $subm
-                .slideDown()
-                .attr('tabindex', 1).focus();
 
-            $this.addClass(active);
+            $this = $(this);
+            $subm = $(this).parent('li').find('ul');
+            active = 'active';
 
-            $subm.focusout(function(){
+            if($subm.is(':hidden')){
+                $subm
+                    .slideDown()
+                    .attr('tabindex', 1).focus();
+
+                $this.addClass(active);
+
+                $subm.focusout(function(){
+                    $subm.slideUp();
+                    $this.removeClass(active);
+                });
+            }
+            else{
                 $subm.slideUp();
                 $this.removeClass(active);
-            });
-        }
-        else{
-            $subm.slideUp();
-            $this.removeClass(active);
+            }
         }
     });
 

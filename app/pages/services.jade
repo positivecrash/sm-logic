@@ -1,0 +1,42 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageclass = 'p-service'
+
+block head
+	- var pageTitle = 'Наши услуги'
+
+block content
+	+menu()
+
+	main(role="main").marginBotFix
+		#services.section.setw
+			h1 Наши услуги
+			.textSection
+				p Помимо комплексных решений вы можете обратиться к нам с заказом любой услуги отдельно.
+
+			.IconsTexts.grid
+				.grid-4
+					a(href="#")
+						span.sprite-camera
+					a(href="#") Cистемы безопасности
+
+				.grid-4
+					a(href="#")
+						span.sprite-alarm
+					a(href="#") Пожарные системы
+
+				.grid-4
+					a(href="#")
+						span.sprite-server
+					a(href="#") Системы связи
+
+				.grid-4
+					a(href="#")
+						span.sprite-satellite
+					a(href="#") Телекоммуникационные системы
+
+		.section-gray
+			+howItWorks
+		

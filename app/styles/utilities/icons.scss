@@ -37,8 +37,50 @@
 	@if $filename == camera {
 		$char: "\E003";
 	}
-	@if $filename == gate {
+	@if $filename == disabled {
 		$char: "\E004";
+	}
+	@if $filename == firealarm {
+		$char: "\E005";
+	}
+	@if $filename == firefight {
+		$char: "\E006";
+	}
+	@if $filename == firewater {
+		$char: "\E007";
+	}
+	@if $filename == gate {
+		$char: "\E008";
+	}
+	@if $filename == hood {
+		$char: "\E009";
+	}
+	@if $filename == horn {
+		$char: "\E00A";
+	}
+	@if $filename == internetSocket {
+		$char: "\E00B";
+	}
+	@if $filename == laptopConnect {
+		$char: "\E00C";
+	}
+	@if $filename == networking {
+		$char: "\E00D";
+	}
+	@if $filename == radio {
+		$char: "\E00E";
+	}
+	@if $filename == server {
+		$char: "\E00F";
+	}
+	@if $filename == technology {
+		$char: "\E010";
+	}
+	@if $filename == time {
+		$char: "\E011";
+	}
+	@if $filename == wifi {
+		$char: "\E012";
 	}
 
 	@return $char;
@@ -61,6 +103,48 @@
 .i-camera {
 	@include icon(camera);
 }
+.i-disabled {
+	@include icon(disabled);
+}
+.i-firealarm {
+	@include icon(firealarm);
+}
+.i-firefight {
+	@include icon(firefight);
+}
+.i-firewater {
+	@include icon(firewater);
+}
 .i-gate {
 	@include icon(gate);
+}
+.i-hood {
+	@include icon(hood);
+}
+.i-horn {
+	@include icon(horn);
+}
+.i-internetSocket {
+	@include icon(internetSocket);
+}
+.i-laptopConnect {
+	@include icon(laptopConnect);
+}
+.i-networking {
+	@include icon(networking);
+}
+.i-radio {
+	@include icon(radio);
+}
+.i-server {
+	@include icon(server);
+}
+.i-technology {
+	@include icon(technology);
+}
+.i-time {
+	@include icon(time);
+}
+.i-wifi {
+	@include icon(wifi);
 }

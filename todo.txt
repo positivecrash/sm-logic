@@ -1,3 +1,4 @@
 - IE8 competible
 - Mobile menu scrolling
 - column-count fallback
+- fancybox
