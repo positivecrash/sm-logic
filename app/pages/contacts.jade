@@ -1,0 +1,54 @@
+extends extends/layout.jade
+include includes/mixins.jade
+
+block html
+	- var pageclass = 'p-text p-contacts'
+
+block head
+	- var pageTitle = 'Контакты'
+
+block content
+	+menu()
+
+	main(role="main").marginBotFix
+		.setw
+			h1 Контакты
+
+			.grid.section
+				.grid-3
+					.t-title__l Адрес
+					p г. Санкт-Петербург, пр-т Обуховской обороны дом 51 лит к БЦ «Арка»
+				.grid-3
+					.t-title__l Телефон
+					a(href="#") +7 (812) 336-16-95
+				.grid-3
+					.t-title__l Время работы
+					p Пн-Пт 10.00 - 18.00 по московскому времени
+
+			.grid.section
+				.grid-3
+				.grid-3
+					.t-title__l Обратная связь
+
+					form
+						label.wrap__inp_block
+							input.inp-block(type="email", placeholder="Ваш email")
+						label.wrap__inp_block
+							input.inp-block(type="text", placeholder="Ваше имя")
+						label.wrap__inp_block
+							textarea.inp-block(placeholder="Сообщение")
+						input.inp-block(type="submit", value="Отправить")
+
+
+					form(style="display:none")
+						label.wrap__inp_block
+							input.inp-block.err(type="email", placeholder="Ваш email")
+							.err.msg Введите, пожалуйста, ваш email
+						label.wrap__inp_block
+							input.inp-block(type="text", placeholder="Ваше имя")
+						label.wrap__inp_block
+							textarea.inp-block(placeholder="Сообщение")
+						input.inp-block.confirmed(type="submit", value="Отправлено")
+						.err.msg Ваше сообщение не было отправлено
+						.ok.msg Ваше сообщение успешно отправлено
+				.grid-3 

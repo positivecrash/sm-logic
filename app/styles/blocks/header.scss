@@ -118,6 +118,27 @@ html, body, #scrn-1, .banner_back{
 		top: 0;
 		left: 0;
 		right: 0;
+
+		padding-top: 3px;
+		padding-bottom: 4px;
+
+		transition: .2s ease-out all;
+
+		#header-phone_tog{
+			transition: .2s ease-out all;
+			width: 38px;
+			height: 38px;
+			font-size: 22px;
+		}
+
+		#header-nav_menu {
+		    font-size: 18px;
+		}
+
+
+		#nav-logo{
+			font-size: 30px;
+		}
 	}
 }
 
@@ -293,6 +314,29 @@ html, body, #scrn-1, .banner_back{
 	font-weight: 300;
 }
 
+
+#nav-logo{
+	color: #fff;
+	font-size: 36px;
+
+	a{
+		@extend %link_noline;
+	}
+
+	.i-logo{
+		display: block;
+	}
+}
+
+#header-phone_tog{
+	@extend %link_noline;
+	color: #fff;
+	font-size: 25px;
+
+	.i-phone{
+		display: block;
+	}
+}
 
 
 

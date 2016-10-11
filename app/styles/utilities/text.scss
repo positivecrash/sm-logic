@@ -97,3 +97,14 @@ blockquote, p, li, .textSection {
 .t-red, a.t-red { color: $color-red; color: $color-red !important; }
 
 .t-small { font-size: 9px; }
+
+
+.t-title__l{
+  font-size: 16px;
+  font-weight: bold;
+  color: $color-gray-0;
+  border-bottom: 2px solid $color-gray-0;
+
+  width: 160px;
+  margin-bottom: $vertical-rythm;
+}

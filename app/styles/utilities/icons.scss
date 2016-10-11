@@ -31,56 +31,65 @@
 	@if $filename == alarm {
 		$char: "\E001";
 	}
-	@if $filename == barrier {
+	@if $filename == arrow {
 		$char: "\E002";
 	}
-	@if $filename == camera {
+	@if $filename == barrier {
 		$char: "\E003";
 	}
-	@if $filename == disabled {
+	@if $filename == camera {
 		$char: "\E004";
 	}
-	@if $filename == firealarm {
+	@if $filename == disabled {
 		$char: "\E005";
 	}
-	@if $filename == firefight {
+	@if $filename == firealarm {
 		$char: "\E006";
 	}
-	@if $filename == firewater {
+	@if $filename == firefight {
 		$char: "\E007";
 	}
-	@if $filename == gate {
+	@if $filename == firewater {
 		$char: "\E008";
 	}
-	@if $filename == hood {
+	@if $filename == gate {
 		$char: "\E009";
 	}
-	@if $filename == horn {
+	@if $filename == hood {
 		$char: "\E00A";
 	}
-	@if $filename == internetSocket {
+	@if $filename == horn {
 		$char: "\E00B";
 	}
-	@if $filename == laptopConnect {
+	@if $filename == internetSocket {
 		$char: "\E00C";
 	}
-	@if $filename == networking {
+	@if $filename == laptopConnect {
 		$char: "\E00D";
 	}
-	@if $filename == radio {
+	@if $filename == logo {
 		$char: "\E00E";
 	}
-	@if $filename == server {
+	@if $filename == networking {
 		$char: "\E00F";
 	}
-	@if $filename == technology {
+	@if $filename == phone {
 		$char: "\E010";
 	}
-	@if $filename == time {
+	@if $filename == radio {
 		$char: "\E011";
 	}
-	@if $filename == wifi {
+	@if $filename == server {
 		$char: "\E012";
+	}
+	@if $filename == technology {
+		$char: "\E013";
+	}
+	@if $filename == time {
+		$char: "\E014";
+	}
+	@if $filename == wifi {
+		$char: "\E015";
 	}
 
 	@return $char;
@@ -96,6 +105,9 @@
 
 .i-alarm {
 	@include icon(alarm);
+}
+.i-arrow {
+	@include icon(arrow);
 }
 .i-barrier {
 	@include icon(barrier);
@@ -130,8 +142,14 @@
 .i-laptopConnect {
 	@include icon(laptopConnect);
 }
+.i-logo {
+	@include icon(logo);
+}
 .i-networking {
 	@include icon(networking);
+}
+.i-phone {
+	@include icon(phone);
 }
 .i-radio {
 	@include icon(radio);

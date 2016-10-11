@@ -2,7 +2,7 @@ extends extends/layout.jade
 include includes/mixins.jade
 
 //- block html
-//- 	- var pageclass = 'p-service'
+//- 	- var pageclass = 'p-text'
 
 block head
 	- var pageTitle = 'Комплексные решения для вашего бизнеса'
@@ -21,7 +21,8 @@ block content
 						.tab_tog
 							a(href="#")
 								span.sprite-circus
-							a(href="#") Торговые и бизнес центры, стадионы и концертные площадки
+							a.tab_tog__text(href="#") Торговые и бизнес центры, стадионы и концертные площадки
+							a(href="#").i-arrow
 
 						.tab_text
 							p Торговые центры, спортивные комплексы, стадионы – сложные объекты: большие потоки людей, энергопотребления, высокие требования к освещению и звукооснащению, билетно-кассовые системы. Все это накладывает строгие условия для организации эксплуатации инженерных систем в объектах подобного типа.
@@ -34,7 +35,8 @@ block content
 						.tab_tog
 							a(href="#")
 								span.sprite-houses
-							a(href="#") Жилые комплексы, коттеджи, квартиры
+							a.tab_tog__text(href="#") Жилые комплексы, коттеджи, квартиры
+							a(href="#").i-arrow
 
 						.tab_text text 2
 
@@ -42,7 +44,8 @@ block content
 						.tab_tog
 							a(href="#")
 								span.sprite-factory
-							a(href="#") Предприятия, производства, склады
+							a.tab_tog__text(href="#") Предприятия, производства, склады
+							a(href="#").i-arrow
 
 						.tab_text text 3
 
@@ -50,7 +53,8 @@ block content
 						.tab_tog
 							a(href="#")
 								span.sprite-music
-							a(href="#") Масштабные мероприятия
+							a.tab_tog__text(href="#") Масштабные мероприятия
+							a(href="#").i-arrow
 
 						.tab_text text 4
 

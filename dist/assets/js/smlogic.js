@@ -4926,8 +4926,14 @@ jQuery(document).ready(function($){
                 $cont.html($(this).parent().find(settings.cText).html()); //copy tab content to desktop block
                 
                 //set class for current tab
-                $(settings.elCur).removeClass(settings.cCur);
-                $(this).parents(settings.elCur).addClass(settings.cCur);
+                $tog = $(this).parents(settings.elCur);
+
+                if ($tog.hasClass(settings.cCur))
+                    $tog.removeClass(settings.cCur);
+                else{
+                    $(settings.elCur).removeClass(settings.cCur);
+                    $tog.addClass(settings.cCur);
+                }
             });
         });
     };
@@ -4988,10 +4994,10 @@ jQuery(document).ready(function($){
 
     var ac = 'a-show'; //class for animations
     var $nav = $('#header-nav');
-    var navPos = $nav.offset().top;
+    var navPos = $nav.offset().top + $nav.height();
 
     //fix navigation at start if it is on top
-    if( navPos == 0 ){
+    if( $w.scrollTop() >= navPos ){
         $nav.addClass('fixed');
         $main.css('padding-top', mainPadTop + $nav.height() );
     }
@@ -5046,7 +5052,7 @@ jQuery(document).ready(function($){
 
 
             t = false;
-            setTimeout(function(){t = true}, 30);
+            setTimeout(function(){t = true}, 50);
         }
     }
 
