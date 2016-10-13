@@ -70,26 +70,29 @@
 	@if $filename == logo {
 		$char: "\E00E";
 	}
-	@if $filename == networking {
+	@if $filename == menu {
 		$char: "\E00F";
 	}
-	@if $filename == phone {
+	@if $filename == networking {
 		$char: "\E010";
 	}
-	@if $filename == radio {
+	@if $filename == phone {
 		$char: "\E011";
 	}
-	@if $filename == server {
+	@if $filename == radio {
 		$char: "\E012";
 	}
-	@if $filename == technology {
+	@if $filename == server {
 		$char: "\E013";
 	}
-	@if $filename == time {
+	@if $filename == technology {
 		$char: "\E014";
 	}
-	@if $filename == wifi {
+	@if $filename == time {
 		$char: "\E015";
+	}
+	@if $filename == wifi {
+		$char: "\E016";
 	}
 
 	@return $char;
@@ -144,6 +147,9 @@
 }
 .i-logo {
 	@include icon(logo);
+}
+.i-menu {
+	@include icon(menu);
 }
 .i-networking {
 	@include icon(networking);

@@ -164,9 +164,9 @@ main[role="main"]{
 .section{
   margin-bottom: $vertical-rythm * 4;
 
-  &:last-child{
-    margin-bottom: 0;
-  }
+  // &:last-child{
+  //   margin-bottom: 0;
+  // }
 
   @include mobile(){
     margin-bottom: $vertical-rythm * 2;
@@ -881,7 +881,7 @@ main[role="main"]{
 
   #banner-inside_text{
     font: 30px/#{$scale-small} #{$font-family-second};
-    margin: 0 0 $vertical-rythm*2;
+    margin: $vertical-rythm*2 0;
   }
 
 

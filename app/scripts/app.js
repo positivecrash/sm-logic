@@ -4,10 +4,12 @@ jQuery(document).ready(function($){
 	var $d = $(document);
     var $footer = $('footer[role="contentinfo"]');
     var $main = $('main[role="main"]');
+    var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
     var mainPadTop = 84; // padding-top for main, for summ while fixing menu
     var mobile = 670; //media query
+    var tablet = 820; //media query
 
 	/*===  TABS ===*/
 
@@ -100,35 +102,38 @@ jQuery(document).ready(function($){
 
 
     /*===  Some actions while scrolling ===*/
-    
-    t = true;
 
     var ac = 'a-show'; //class for animations
     var $nav = $('#header-nav');
 
 
-    //actions
-    function ShowLogo(){
+    function IndexAnimation(){
+
+        var showPos = 350;
+
+        if( $w.scrollTop() > showPos){
+
+            $('#nav-logo').addClass(ac);
+            $('#nav-menu').addClass(ac);
+        }
+
+        if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
+            $('#solutions').addClass(ac);
+
+        if ($w.scrollTop() > ($('#services').offset().top - showPos)){
+            $('#services').addClass(ac);
+
+            $w.unbind('scroll', IndexAnimation); //end tracking scroll event
+        }
+            
+    }
+
+
+    var t = true;
+
+    function FixFooter(){
 
         if(t == true){
-
-            /*---  for Index page ---*/
-            if($('.p-index').length > 0){
-
-                var showPos = 350;
-
-                if( $w.scrollTop() > showPos){
-
-                    $('#nav-logo').addClass(ac);
-                    $('#nav-menu').addClass(ac);
-                }
-
-                if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
-                    $('#solutions').addClass(ac);
-
-                if ($w.scrollTop() > ($('#services').offset().top - showPos))
-                    $('#services').addClass(ac);
-            }
 
             /*---  Fix footer for pages with welcome screen ---*/
 
@@ -151,6 +156,8 @@ jQuery(document).ready(function($){
 
 
 
+    /*---  Fix navigation on top ---*/
+
     var navPos = $nav.offset().top + 3;
 
     //fix navigation at start if it is on top
@@ -160,28 +167,46 @@ jQuery(document).ready(function($){
     }
 
     function FixNav(){
-        /*---  Fix navigation on top ---*/
 
-            if( $w.scrollTop() >= navPos){
-                $nav.addClass('fixed');
-                $main.css('padding-top', mainPadTop + $nav.height());
-            }
-            else{
-                $nav.removeClass('fixed');
-                $main.css('padding-top', mainPadTop );
-            }
+        if( $w.scrollTop() >= navPos){
+            $nav.addClass('fixed');
+            $main.css('padding-top', mainPadTop + $nav.height());
+        }
+        else{
+            $nav.removeClass('fixed');
+            $main.css('padding-top', mainPadTop );
+        }
 
     }
 
-    $w.bind('scroll', ShowLogo); 
-    $w.bind('scroll', FixNav); 
+
+    /*---  Adjust "top" property for mobile navigation ---*/
+    var t2 = true;
+
+    function SetTopForMenu(){
+
+        if( (t2 == true) && ($w.width() < mobile) ){
+            $menu.css('top', $nav.outerHeight(true));
+
+            t2 = false;
+            setTimeout(function(){t2 = true}, 100);
+        }
+    }
+
+
+    if($('.p-index').length > 0) //detect if there is index page
+        $w.bind('scroll', IndexAnimation);
+
+    $w.bind('scroll', FixFooter);
+    $w.bind('scroll', FixNav);
+    // $w.bind('scroll', SetTopForMenu);
 
     /*===  end of Some actions while scrolling ===*/
 
 
 
     /*===  HEADER MENU ===*/
-    /*---  Submenu interactions ---*/
+    /*---  Submenu interactions, for desctop ---*/
     $('#header-nav_menu .parent > a').on('click', function(e){
         
         if($w.width() > mobile){
@@ -195,6 +220,7 @@ jQuery(document).ready(function($){
 
             if($subm.is(':hidden')){
                 $subm
+                    .css('top', $nav.outerHeight(true)/2 + $(this).parent('li').height()/2)
                     .slideDown()
                     .attr('tabindex', 1).focus();
 
@@ -214,50 +240,34 @@ jQuery(document).ready(function($){
 
 
     /*--- Menu toggle ---*/
-    var $menu = $('#header-nav_menu');
-    $menu.data('open', 'false');
 
     $('#header-menuTogl').on('click', function(e){
         e.preventDefault();
         e.stopPropagation();
 
-        if($menu.is(':hidden')){
-            $menu
-                .slideDown()
-                .data('open', 'true');
-        }
-        else{
-            $menu
-                .slideUp()
-                .data('open', 'false');
-        }
+        if($menu.is(':hidden'))
+            $menu.addClass('active');
+        else
+            $menu.removeClass('active');
     });
 
     $('#header-nav_menu__close').on('click', function(e){
         e.preventDefault();
         e.stopPropagation();
 
-        $menu.slideUp();
+        $menu.removeClass('active');
     });
 
 
-    /*--- Menu toggle - show menu for desktop anyway ---*/
-    t = true;
+    t3 = true;
     function MenuDesktop(){
-        if(t == true){
+        if(t3 == true){
 
-            if($w.width() > 820){
-                $menu.css({'display':'flex'});
-            }
-            else{
-                if($menu.data('open') == 'true')
-                    $menu.css({'display':'block'});
-                else
-                    $menu.css({'display':'none'});
-            }
+            if($w.width() > tablet)
+                $menu.removeClass('active');
 
-            t = false;
-            setTimeout(function(){t = true}, 10);
+            t3 = false;
+            setTimeout(function(){t3 = true}, 50);
         }
     }
 

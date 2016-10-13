@@ -110,6 +110,18 @@ html, body, #scrn-1, .banner_back{
 		height: 48px;
 		border-radius: 24px;
 		border: 1px solid $color-gray-2;
+
+		@extend %link_noline;
+		color: #fff;
+		font-size: 25px;
+
+		.i-phone, .i-menu{
+			display: block;
+		}
+
+		.i-menu{
+			font-size: 18px;
+		}
 	} //todo: fallback для flexbox
 
 
@@ -121,18 +133,16 @@ html, body, #scrn-1, .banner_back{
 		left: 0;
 		right: 0;
 
-		padding-top: 3px;
-		padding-bottom: 4px;
 
-		#header-phone_tog{
-			transition: .2s ease-out all;
+		.header-nav_btn {
+		    transition: .2s ease-out all;
 			width: 38px;
 			height: 38px;
 			font-size: 22px;
-		}
 
-		#header-nav_menu {
-		    font-size: 18px;
+		    .i-menu{
+		    	font-size: 14px;
+		    }
 		}
 
 
@@ -142,7 +152,7 @@ html, body, #scrn-1, .banner_back{
 	}
 }
 
-#header-nav_menu{
+#header-nav_menu, #header-nav_menu_mobile{
 	background-color: $color-blue-1;
 
 	&, ul {
@@ -152,9 +162,6 @@ html, body, #scrn-1, .banner_back{
 
 	font-size: 20px;
 	font-weight: 300;
-
-	@extend %flex_menu;
-	min-width: 70%;
 
 	li{
 		position: relative;
@@ -169,6 +176,11 @@ html, body, #scrn-1, .banner_back{
 			text-decoration: none;
 		}
 	}
+}
+
+#header-nav_menu{
+	@extend %flex_menu;
+	min-width: 70%;
 
 
 	//submenus
@@ -221,6 +233,73 @@ html, body, #scrn-1, .banner_back{
 		}
 	}
 }
+
+#header-nav_menu_mobile{
+
+	display: none;
+
+	&.active{
+		display: block;
+	}
+
+	position: fixed;
+	// top: 63px;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 10;
+	
+	max-height: 100%;
+	overflow-y: auto;
+
+	border-top: 2px solid $color-blue-3;
+	font-size: 16px;
+	font-weight: bold;
+
+
+	li{
+		display: block;
+		padding: 0 30px;
+
+		a{
+			display: block;
+			padding: 15px 0;
+			border-top: 2px solid $color-blue;
+			text-align: left;
+			white-space: nowrap;
+		}
+
+		&:first-child a{
+			border-top: 0;
+		}
+	}
+
+	ul{
+		display: block;
+		position: relative;
+		top: 0;
+		left: 0;
+
+		border-top: 0;
+		border-left: 1px solid $color-blue;
+		padding-left: 10px;
+		margin-left: 10px;
+		margin-bottom: 30px;
+
+		font-weight: normal;
+
+		li{
+			padding: 0;
+
+			a{
+				border-top: 0;
+			}
+		}
+	}
+
+	li.parent  > a:after{ display: none; }
+}
+
 
 #header-nav_menu__close{
 	display: none;
@@ -325,16 +404,6 @@ html, body, #scrn-1, .banner_back{
 	}
 }
 
-#header-phone_tog{
-	@extend %link_noline;
-	color: #fff;
-	font-size: 25px;
-
-	.i-phone{
-		display: block;
-	}
-}
-
 
 
 
@@ -348,7 +417,7 @@ html, body, #scrn-1, .banner_back{
 }
 
 @include min_tablet(){
-	#header-nav #header-menuTogl{
+	#header-nav #header-menuTogl, #header-nav_menu_mobile{
 		display: none;
 	}
 }
@@ -357,60 +426,8 @@ html, body, #scrn-1, .banner_back{
 	
 	#header-nav_menu{
 		display: none;
-
-		position: absolute;
-		top: 63px;
-		left: 0;
-		right: 0;
-		z-index: 10;
-
-		border-top: 2px solid $color-blue-3;
-		font-size: 16px;
-		font-weight: bold;
-
-
-		li{
-			display: block;
-			padding: 0 30px;
-
-			a{
-				display: block;
-				padding: 15px 0;
-				border-top: 2px solid $color-blue;
-				text-align: left;
-				white-space: nowrap;
-			}
-
-			&:first-child a{
-				border-top: 0;
-			}
-		}
-
-		ul{
-			display: block;
-			position: relative;
-			top: 0;
-			left: 0;
-
-			border-top: 0;
-			border-left: 1px solid $color-blue;
-			padding-left: 10px;
-			margin-left: 10px;
-			margin-bottom: 30px;
-
-			font-weight: normal;
-
-			li{
-				padding: 0;
-
-				a{
-					border-top: 0;
-				}
-			}
-		}
-
-		li.parent  > a:after{ display: none; }
 	}
+
 
 	li#header-nav_menu__close{
 		display: block;
@@ -422,6 +439,7 @@ html, body, #scrn-1, .banner_back{
 			text-align: center;
 		}
 	}
+
 
 	#header-nav #header-menuTogl{
 		display: flex;
