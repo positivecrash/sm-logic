@@ -113,6 +113,8 @@ html, body, #scrn-1, .banner_back{
 	} //todo: fallback для flexbox
 
 
+	transition: .2s ease-out all;
+
 	&.fixed{
 		position: fixed;
 		top: 0;
@@ -121,8 +123,6 @@ html, body, #scrn-1, .banner_back{
 
 		padding-top: 3px;
 		padding-bottom: 4px;
-
-		transition: .2s ease-out all;
 
 		#header-phone_tog{
 			transition: .2s ease-out all;
@@ -316,12 +316,9 @@ html, body, #scrn-1, .banner_back{
 
 
 #nav-logo{
+	@extend %link_noline;
 	color: #fff;
 	font-size: 36px;
-
-	a{
-		@extend %link_noline;
-	}
 
 	.i-logo{
 		display: block;

@@ -82,7 +82,7 @@ input, textarea, .btn-primary, input[type='submit'], #footer-bottom #footer-bott
   margin: 0 auto;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, input, textarea, .btn-primary, input[type='submit'], #nav-logo a, #header-phone_tog, .tabs .tab-line .tab_tog a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, input:hover, textarea:hover, .btn-primary:hover, #nav-logo a:hover, #header-phone_tog:hover, .tabs .tab-line .tab_tog a:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, input:focus, textarea:focus, .btn-primary:focus, #nav-logo a:focus, #header-phone_tog:focus, .tabs .tab-line .tab_tog a:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, input:visited, textarea:visited, .btn-primary:visited, #nav-logo a:visited, #header-phone_tog:visited, .tabs .tab-line .tab_tog a:visited {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, input, textarea, .btn-primary, input[type='submit'], #nav-logo, #header-phone_tog, .tabs .tab-line .tab_tog a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, input:hover, textarea:hover, .btn-primary:hover, #nav-logo:hover, #header-phone_tog:hover, .tabs .tab-line .tab_tog a:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, input:focus, textarea:focus, .btn-primary:focus, #nav-logo:focus, #header-phone_tog:focus, .tabs .tab-line .tab_tog a:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, input:visited, textarea:visited, .btn-primary:visited, #nav-logo:visited, #header-phone_tog:visited, .tabs .tab-line .tab_tog a:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -379,14 +379,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, input, textarea, .btn-primary, input[type='s
 
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Demi.eot?1476192798');
-  src: url('../fonts/AvenirNextCyr-Demi.eot?&1476192798#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1476192798') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?1476345063');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?&1476345063#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1476345063') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Bold.eot?1476192798');
-  src: url('../fonts/AvenirNextCyr-Bold.eot?&1476192798#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1476192798') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?1476345063');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?&1476345063#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1476345063') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
   font-weight: bold;
 }
 body, .grid-4, .grid-3, .grid-2, .tabs .tab_text {
@@ -841,6 +841,8 @@ html, body, #scrn-1, .banner_back {
   background-color: #002A4E;
   padding-top: 6px;
   padding-bottom: 7px;
+  -webkit-transition: .2s ease-out all;
+          transition: .2s ease-out all;
 }
 #header-nav .sprite-logoSymbol, #header-nav .header-menu_btn {
   -ms-flex-negative: 0;
@@ -859,8 +861,6 @@ html, body, #scrn-1, .banner_back {
   right: 0;
   padding-top: 3px;
   padding-bottom: 4px;
-  -webkit-transition: .2s ease-out all;
-          transition: .2s ease-out all;
 }
 #header-nav.fixed #header-phone_tog {
   -webkit-transition: .2s ease-out all;
@@ -1419,94 +1419,6 @@ main[role="main"]#main-index {
 }
 
 /*------- ELEMENTS - TABLES --------*/
-table {
-  margin: 42px 0;
-}
-table td, table th {
-  padding: 10px 0 10px 20px;
-  vertical-align: top;
-}
-table td:first-child, table th:first-child {
-  padding-left: 0;
-}
-table th {
-  padding-bottom: 5px;
-  font-size: 15px;
-  line-height: 1.2;
-  border-bottom: 1px solid #333;
-  padding-top: 0;
-  color: #333;
-}
-table tbody tr:last-child td {
-  border-bottom: 0;
-}
-table tbody tr:hover td {
-  border-color: #333;
-}
-table tbody tr:hover.table-header td {
-  background-color: transparent;
-  border-color: #333;
-}
-table tbody td {
-  border-bottom: 1px dashed #333;
-}
-table th, table tfoot td {
-  text-align: left;
-  font-family: "Avenir Next", Arial, Tahoma, Verdana, sans-serif;
-  font-weight: normal;
-}
-table.table-nohov tbody tr:hover td {
-  border-color: #333;
-  background-color: transparent;
-}
-table.table-nohov .table-header:hover td {
-  border-color: #333;
-  background-color: transparent;
-}
-table.table-clear td, table.table-clear tr:hover td {
-  padding: 4px 0 4px 15px;
-}
-table.table-clear td:first-child, table.table-clear tr:hover td:first-child {
-  padding-left: 0;
-}
-table.table-clear td, table.table-clear td:hover, table.table-clear tr:hover td, table.table-clear tr:hover td:hover {
-  background: none;
-  border: none;
-}
-@media screen and (max-width: 670px) {
-  table.table-responsive thead {
-    display: none;
-  }
-  table.table-responsive tbody td {
-    display: block;
-    width: 100%;
-    border: 0;
-    padding: 5px 0 0;
-  }
-  table.table-responsive tbody td:before {
-    content: attr(data-th) " ";
-    font-weight: bold;
-    color: #333;
-    display: inline-block;
-    margin-bottom: 5px;
-    width: 170px;
-    vertical-align: middle;
-  }
-  table.table-responsive tbody tr td:last-child {
-    border-bottom: 1px solid #333;
-    padding-bottom: 5px;
-  }
-  table.table-responsive tbody tr:last-child td:last-child {
-    border-bottom: 0;
-  }
-  table.table-responsive .table-header td, table.table-responsive tfoot td {
-    text-align: center;
-  }
-  table.table-responsive .table-header td:before, table.table-responsive tfoot td:before {
-    width: 0;
-  }
-}
-
 /*--- FANCYBOX ---*/
 /*--- Banner with foreground ---*/
 .banner_back {
@@ -1525,6 +1437,8 @@ table.table-clear td, table.table-clear td:hover, table.table-clear tr:hover td,
   position: fixed;
   left: 0;
   right: 0;
+  bottom: 0;
+  top: 0;
 }
 
 .banner_fore {
@@ -1861,7 +1775,7 @@ table.table-clear td, table.table-clear td:hover, table.table-clear tr:hover td,
 }
 .p-service #banner-inside_text {
   font: 30px/1.2 Avenir Next, Arial, Tahoma, Verdana, sans-serif;
-  margin: 42px 0 42px;
+  margin: 0 0 42px;
 }
 .p-service.no-backdropfilter .banner_back:before {
   filter: blur(2px);

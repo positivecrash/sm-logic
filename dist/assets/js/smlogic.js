@@ -4994,13 +4994,6 @@ jQuery(document).ready(function($){
 
     var ac = 'a-show'; //class for animations
     var $nav = $('#header-nav');
-    var navPos = $nav.offset().top + $nav.height();
-
-    //fix navigation at start if it is on top
-    if( $w.scrollTop() >= navPos ){
-        $nav.addClass('fixed');
-        $main.css('padding-top', mainPadTop + $nav.height() );
-    }
 
 
     //actions
@@ -5039,24 +5032,38 @@ jQuery(document).ready(function($){
                 }
             }
 
-            /*---  Fix navigation on top ---*/
-
-            if( $w.scrollTop() >= navPos){
-                $nav.addClass('fixed');
-                $main.css('padding-top', mainPadTop + $nav.height() );
-            }
-            else{
-                $nav.removeClass('fixed');
-                $main.css('padding-top', mainPadTop );
-            }
-
 
             t = false;
             setTimeout(function(){t = true}, 50);
         }
     }
 
+
+
+    var navPos = $nav.offset().top + 3;
+
+    //fix navigation at start if it is on top
+    if( $w.scrollTop() >= navPos ){
+        $nav.addClass('fixed');
+        $main.css('padding-top', mainPadTop + $nav.height());
+    }
+
+    function FixNav(){
+        /*---  Fix navigation on top ---*/
+
+            if( $w.scrollTop() >= navPos){
+                $nav.addClass('fixed');
+                $main.css('padding-top', mainPadTop + $nav.height());
+            }
+            else{
+                $nav.removeClass('fixed');
+                $main.css('padding-top', mainPadTop );
+            }
+
+    }
+
     $w.bind('scroll', ShowLogo); 
+    $w.bind('scroll', FixNav); 
 
     /*===  end of Some actions while scrolling ===*/
 
@@ -5139,7 +5146,7 @@ jQuery(document).ready(function($){
             }
 
             t = false;
-            setTimeout(function(){t = true}, 50);
+            setTimeout(function(){t = true}, 10);
         }
     }
 
