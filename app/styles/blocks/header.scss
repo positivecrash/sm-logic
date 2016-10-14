@@ -420,6 +420,11 @@ html, body, #scrn-1, .banner_back{
 	#header-nav #header-menuTogl, #header-nav_menu_mobile{
 		display: none;
 	}
+
+	#header-phone_tog.active{
+		background-color: $color-blue-3;
+		border-color: $color-blue-3;
+	}
 }
 
 @include max_tablet(){
@@ -443,6 +448,11 @@ html, body, #scrn-1, .banner_back{
 
 	#header-nav #header-menuTogl{
 		display: flex;
+	}
+
+	#header-menuTogl.active{
+		background-color: $color-blue-3;
+		border-color: $color-blue-3;
 	}
 
 }

@@ -26,7 +26,7 @@ mixin menu()
 				a#header-menuTogl.header-nav_btn(href="#")
 					span.i-menu
 
-				a#header-phone_tog.header-nav_btn(href="#")
+				a#header-phone_tog.header-nav_btn(href="tel:+78123361695")
 					span.i-phone
 
 	ul#header-nav_menu_mobile
@@ -57,7 +57,7 @@ mixin howItWorks()
 				.blocks-i.active
 					.blocks-i_n 1
 					.blocks-i_t Ваш звонок или 
-						a(href="#") заявка на сайте
+						a.fancybox(href="#fbx-appl") заявка на сайте
 				.blocks-i
 					.blocks-i_n 2
 					.blocks-i_t Пишем техническое задание
@@ -78,8 +78,19 @@ mixin howItWorks()
 					.blocks-i_t Сдаем объект
 
 		.t-center
-			a.btn-primary(href="#") Оставить заявку
+			a.btn-primary.fancybox(href="#fbx-appl") Оставить заявку
 
 
 mixin fancyboxes()
-	p(style="display:none") rr
+	#fbx-appl.fbx-w(style="display:none")
+		h3 Оставьте завку
+		p.t-center Наш менеджер свяжется с вами
+
+		form
+			label.wrap__inp_block
+				input.inp-block(type="text", placeholder="Ваше имя")
+			label.wrap__inp_block
+				input.inp-block(type="text", placeholder="Телефон")
+			label.wrap__inp_block
+				textarea.inp-block(placeholder="Сообщение (необязательно)")
+			input.inp-block(type="submit", value="Отправить")

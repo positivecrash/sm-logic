@@ -6,6 +6,10 @@ jQuery(document).ready(function($){
     var $main = $('main[role="main"]');
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
+    var ac = 'a-show'; //class for animations
+    var $nav = $('#header-nav');
+    var fixNav = 'fixed'; //class for fixed navigation
+
     var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
     var mainPadTop = 84; // padding-top for main, for summ while fixing menu
     var mobile = 670; //media query
@@ -29,8 +33,13 @@ jQuery(document).ready(function($){
             $tog = $el.find(settings.cTog);
         	$cont = $el.find(settings.cCont);
 
-            $cont.html($el.find(settings.cText).first().html()); //copy tab content to desktop block
-            $el.find(settings.elCur).first().addClass(settings.cCur);
+            if($el.find('.'+settings.cCur).length > 0 ){  //detecting if current tab has been set already
+                $cont.html($el.find('.'+settings.cCur).find(settings.cText).html()); //copy tab content to desktop block
+            }
+            else{
+                $cont.html($el.find(settings.cText).first().html()); //copy tab content to desktop block
+                $el.find(settings.elCur).first().addClass(settings.cCur); //set current class for tab
+            }
 
             $tog.on('click', function(e){
                 e.preventDefault();
@@ -60,32 +69,24 @@ jQuery(document).ready(function($){
 
 
 	/*===  FANCYBOX ===*/
-	// if (typeof ($.fn.fancybox) != 'undefined') {
-	// 	var fancyBoxDefaults = {
- //            padding: 0,
-	// 		margin: 10,
-	// 		tpl: {
-	// 			closeBtn : '<a title="Закрыть" class="fancybox-item sprite-cancel" href="javascript:;"></a>',
-	// 			next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="icon icon-arrDarkRight"></span></a>',
-	// 			prev     : '<a title="Предыдущий" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="icon icon-arrDarkLeft"></span></a>'
-	// 		}
-	// 	}
+	if (typeof ($.fn.fancybox) != 'undefined') {
+		var fancyBoxDefaults = {
+            padding: 0,
+			margin: 10,
+            helpers: {
+                overlay: {
+                  locked: false
+                }
+              },
+			tpl: {
+				closeBtn : '<a title="Закрыть" class="fancybox-item fbx-close" href="javascript:;">Закрыть окно</a>',
+				next     : '<a title="Следующий" class="fancybox-nav fancybox-next" href="javascript:;"><span class="icon icon-arrDarkRight"></span></a>',
+				prev     : '<a title="Предыдущий" class="fancybox-nav fancybox-prev" href="javascript:;"><span class="icon icon-arrDarkLeft"></span></a>'
+			}
+		}
 
-	// 	// everything that popus, including image galleries
-	// 	$('.fancybox').fancybox(fancyBoxDefaults);
-
-		
-	// 	// href points to html page as a fallback, data-fancyboxlink to anchor of fancybox popup
-	// 	$('.fancybox-linked').on('click', function(e){
-	// 		e.preventDefault();
-	// 		e.stopPropagation();
-
-	// 		$.fancybox(
-	// 			$.extend({}, fancyBoxDefaults, {
-	// 	        	href: $(this).data('fancyboxlink')
-	// 	    	}))
-	// 	});
-	// }
+		$('.fancybox').fancybox(fancyBoxDefaults);
+	}
 
 	/*===  end of FANCYBOX ===*/
 
@@ -98,14 +99,13 @@ jQuery(document).ready(function($){
         e.stopPropagation();
         $('html, body').animate({scrollTop: $('#scrn-1').height() }, 1000);
     });
+    /*===  end of Scroll 1 screen away ===*/
+
+
 
 
 
     /*===  Some actions while scrolling ===*/
-
-    var ac = 'a-show'; //class for animations
-    var $nav = $('#header-nav');
-
 
     function IndexAnimation(){
 
@@ -162,18 +162,18 @@ jQuery(document).ready(function($){
 
     //fix navigation at start if it is on top
     if( $w.scrollTop() >= navPos ){
-        $nav.addClass('fixed');
+        $nav.addClass(fixNav);
         $main.css('padding-top', mainPadTop + $nav.height());
     }
 
     function FixNav(){
 
         if( $w.scrollTop() >= navPos){
-            $nav.addClass('fixed');
+            $nav.addClass(fixNav);
             $main.css('padding-top', mainPadTop + $nav.height());
         }
         else{
-            $nav.removeClass('fixed');
+            $nav.removeClass(fixNav);
             $main.css('padding-top', mainPadTop );
         }
 
@@ -182,14 +182,15 @@ jQuery(document).ready(function($){
 
     /*---  Adjust "top" property for mobile navigation ---*/
     var t2 = true;
+    $menu.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
 
     function SetTopForMenu(){
 
-        if( (t2 == true) && ($w.width() < mobile) ){
-            $menu.css('top', $nav.outerHeight(true));
+        if(t2 == true){
+            $menu.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
 
             t2 = false;
-            setTimeout(function(){t2 = true}, 100);
+            setTimeout(function(){t2 = true}, 2);
         }
     }
 
@@ -199,9 +200,12 @@ jQuery(document).ready(function($){
 
     $w.bind('scroll', FixFooter);
     $w.bind('scroll', FixNav);
-    // $w.bind('scroll', SetTopForMenu);
+    $w.bind('scroll', SetTopForMenu);
+    
 
     /*===  end of Some actions while scrolling ===*/
+
+
 
 
 
@@ -241,21 +245,33 @@ jQuery(document).ready(function($){
 
     /*--- Menu toggle ---*/
 
-    $('#header-menuTogl').on('click', function(e){
+    var classAct = 'active';
+
+    $('.header-nav_btn').on('click', function(){  //no need to cancel default actions here, this function just for set classes, interactions later
+        $o = $(this);
+
+        if (!$o.hasClass(classAct))
+            $o.addClass(classAct)
+        else
+            $o.removeClass(classAct)
+    });
+
+    $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
         e.preventDefault();
         e.stopPropagation();
 
         if($menu.is(':hidden'))
-            $menu.addClass('active');
+            $menu.addClass(classAct);
         else
-            $menu.removeClass('active');
+            $menu.removeClass(classAct);
     });
 
-    $('#header-nav_menu__close').on('click', function(e){
+    $('#header-nav_menu__close').on('click', function(e){ //close mobile menu
         e.preventDefault();
         e.stopPropagation();
 
-        $menu.removeClass('active');
+        $menu.removeClass(classAct);
+        $('#header-menuTogl').removeClass(classAct);
     });
 
 
@@ -264,14 +280,19 @@ jQuery(document).ready(function($){
         if(t3 == true){
 
             if($w.width() > tablet)
-                $menu.removeClass('active');
+                $menu.removeClass(classAct);
 
             t3 = false;
             setTimeout(function(){t3 = true}, 50);
         }
     }
 
-    $w.on('resize', MenuDesktop); 
+
+    // function MenuDesktop(){
+    // }
+
+
+    $w.bind('resize', MenuDesktop); 
 
     /*===  end of HEADER MENU ===*/
 
