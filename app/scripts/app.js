@@ -7,7 +7,8 @@ jQuery(document).ready(function($){
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var ac = 'a-show'; //class for animations
-    var $nav = $('#header-nav');
+    // var $nav = $('#header-nav');
+    var $nav = $('#header-nav__container');
     var fixNav = 'fixed'; //class for fixed navigation
 
     var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
@@ -102,10 +103,7 @@ jQuery(document).ready(function($){
     /*===  end of Scroll 1 screen away ===*/
 
 
-
-
-
-    /*===  Some actions while scrolling ===*/
+    /*===  Index animation while scrolling ===*/
 
     function IndexAnimation(){
 
@@ -129,7 +127,16 @@ jQuery(document).ready(function($){
     }
 
 
-    var t = true;
+    if($('.p-index').length > 0) //detect if there is index page
+        $w.bind('scroll', IndexAnimation);
+
+    /*===  end of Index animation while scrolling ===*/
+
+
+
+    /*===  Footer interactions ===*/
+
+    var t = true;  //timer switch
 
     function FixFooter(){
 
@@ -154,16 +161,24 @@ jQuery(document).ready(function($){
         }
     }
 
+    $w.bind('scroll', FixFooter);
+
+    /*===  end of Footer interactions ===*/
+
+
+
+
+    /*===  Header interactions ===*/
+
 
 
     /*---  Fix navigation on top ---*/
 
     var navPos = $nav.offset().top + 3;
 
-    //fix navigation at start if it is on top
     if( $w.scrollTop() >= navPos ){
         $nav.addClass(fixNav);
-        $main.css('padding-top', mainPadTop + $nav.height());
+        $main.css('padding-top', mainPadTop + $nav.height()); //fix navigation at start if it is on top
     }
 
     function FixNav(){
@@ -176,40 +191,12 @@ jQuery(document).ready(function($){
             $nav.removeClass(fixNav);
             $main.css('padding-top', mainPadTop );
         }
-
     }
-
-
-    /*---  Adjust "top" property for mobile navigation ---*/
-    var t2 = true;
-    $menu.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
-
-    function SetTopForMenu(){
-
-        if(t2 == true){
-            $menu.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
-
-            t2 = false;
-            setTimeout(function(){t2 = true}, 2);
-        }
-    }
-
-
-    if($('.p-index').length > 0) //detect if there is index page
-        $w.bind('scroll', IndexAnimation);
-
-    $w.bind('scroll', FixFooter);
     $w.bind('scroll', FixNav);
-    $w.bind('scroll', SetTopForMenu);
-    
-
-    /*===  end of Some actions while scrolling ===*/
 
 
 
 
-
-    /*===  HEADER MENU ===*/
     /*---  Submenu interactions, for desctop ---*/
     $('#header-nav_menu .parent > a').on('click', function(e){
         
@@ -226,14 +213,18 @@ jQuery(document).ready(function($){
                 $subm
                     .css('top', $nav.outerHeight(true)/2 + $(this).parent('li').height()/2)
                     .slideDown()
-                    .attr('tabindex', 1).focus();
+                    .attr('tabindex', 1).focus()
+                    .focusout(function(){
+                        $subm.slideUp();
+                        $this.removeClass(active);
+                    });
 
                 $this.addClass(active);
 
-                $subm.focusout(function(){
-                    $subm.slideUp();
-                    $this.removeClass(active);
-                });
+                // $subm.focusout(function(){
+                //     $subm.slideUp();
+                //     $this.removeClass(active);
+                // });
             }
             else{
                 $subm.slideUp();
@@ -243,7 +234,77 @@ jQuery(document).ready(function($){
     });
 
 
+
+
+    /*---  Adjust "top" property for slides ---*/
+    // var t2 = true; //timer switch
+    // var $slide = $('.slide');
+    
+    // $slide.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
+
+    // function SetTopForSlide(){
+
+    //     if(t2 == true){
+    //         $slide.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
+
+    //         t2 = false;
+    //         setTimeout(function(){t2 = true}, 10);
+    //     }
+    // }
+
+    // $w.bind('scroll', SetTopForSlide);
+
+
+
+
+
+    /*===  end of Header interactions ===*/
+
+
+
+
+
+
+
+    /*===  HEADER MENU ===*/
+
+
     /*--- Menu toggle ---*/
+
+    $.fn.toggle = function (options) {
+
+        var settings = $.extend({
+            active:     'active' //active class (toggle with css and media queries)
+        }, options);
+
+
+        return this.each(function () {
+            $el = $(this);
+
+            if(!$el.hasClass(settings.active)){
+                console.log('open');
+
+                $el
+                    .addClass(settings.active)
+                    .attr('tabindex', 1)
+                    .focus(function(){
+                        console.log($el.attr('id') + 'show');
+                    })
+                    .focusout(function(){
+                        console.log('lost');
+                        $el.removeClass(settings.active);
+                    });
+            }
+            else{
+                console.log('open');
+                $el.removeClass(settings.active);
+            }
+
+        });
+
+    };
+
+
 
     var classAct = 'active';
 
@@ -256,27 +317,20 @@ jQuery(document).ready(function($){
             $o.removeClass(classAct)
     });
 
-    $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
+
+    $('.close_parent').on('click', function(e){ //close mobile menu or phone call menu
         e.preventDefault();
         e.stopPropagation();
 
-        if($menu.is(':hidden'))
-            $menu.addClass(classAct);
-        else
-            $menu.removeClass(classAct);
-    });
+        var $this = $(this);
 
-    $('#header-nav_menu__close').on('click', function(e){ //close mobile menu
-        e.preventDefault();
-        e.stopPropagation();
-
-        $menu.removeClass(classAct);
-        $('#header-menuTogl').removeClass(classAct);
+        $this.parent().removeClass(classAct);
+        $($this.data('tog')).removeClass(classAct);
     });
 
 
     t3 = true;
-    
+
     function MenuDesktop(){
         if(t3 == true){
 
@@ -289,8 +343,37 @@ jQuery(document).ready(function($){
     }
 
 
-    // function MenuDesktop(){
-    // }
+
+    $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
+        e.preventDefault();
+        e.stopPropagation();
+
+        $menu.toggle();
+
+        // if($menu.is(':hidden'))
+        //     $menu.addClass(classAct);
+        // else
+        //     $menu.removeClass(classAct);
+    });
+
+
+    // var $PhoneMenu = $('#header-nav_menu_phone');
+
+    $('#header-phone_tog').on('click', function(e){ //toogle menu with phone call
+
+        if($w.width() > mobile){
+            e.preventDefault();
+            e.stopPropagation();
+
+            $('#header-nav_menu_phone').toggle();
+
+            // if($PhoneMenu.is(':hidden'))
+            //     $PhoneMenu.addClass(classAct);
+            // else
+            //     $PhoneMenu.removeClass(classAct);
+        }
+    });
+    
 
 
     $w.bind('resize', MenuDesktop); 

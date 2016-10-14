@@ -16,38 +16,46 @@
   </head>
   <body>
     <!--[if lte IE 8]><div id="oldiebrowser"><h1>Уважаемый покупатель, вы используете сильно устаревшую версию браузера</h1><p>Для полнценной и более приятной работы с нашим интернет-магазином, пожалуйста, обновите свой браузер до новой версии. Или скачайте новую версию браузера другой компании из официальных источников (например, Google Chrome, Yandex браузер, Mozilla Firefox).</p></div><![endif]-->
-    <div id="header-nav">
-      <div class="setw"><a id="nav-logo" href="index.html"><span class="i-logo"></span></a>
-        <ul id="header-nav_menu">
-          <li><a href="about.html">О компании</a></li>
-          <li class="parent"><a href="services.html">Услуги</a>
-            <ul>
-              <li><a href="service_1.html">Системы безопасности</a></li>
-              <li><a href="service_2.html">Пожарные системы</a></li>
-              <li><a href="service_3.html">Системы связи</a></li>
-              <li><a href="service_4.html">Телекоммуникационные системы</a></li>
-            </ul>
-          </li>
-          <li><a href="solutions.html">Решения</a></li>
-          <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-        <div id="nav-menu" class="flexmenu"><a id="header-menuTogl" href="#" class="header-nav_btn"><span class="i-menu"></span></a><a id="header-phone_tog" href="tel:+78123361695" class="header-nav_btn"><span class="i-phone"></span></a></div>
+    <div id="header-nav__container">
+      <div id="header-nav">
+        <div class="setw"><a id="nav-logo" href="index.html"><span class="i-logo"></span></a>
+          <ul id="header-nav_menu">
+            <li><a href="about.html">О компании</a></li>
+            <li class="parent"><a href="services.html">Услуги</a>
+              <ul>
+                <li><a href="service_1.html">Системы безопасности</a></li>
+                <li><a href="service_2.html">Пожарные системы</a></li>
+                <li><a href="service_3.html">Системы связи</a></li>
+                <li><a href="service_4.html">Телекоммуникационные системы</a></li>
+              </ul>
+            </li>
+            <li><a href="solutions.html">Решения</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+          </ul>
+          <div id="nav-menu" class="flexmenu"><a id="header-menuTogl" href="#" class="header-nav_btn"><span class="i-menu"></span></a><a id="header-phone_tog" href="tel:+78123361695" class="header-nav_btn"><span class="i-phone"></span></a></div>
+        </div>
       </div>
+      <div id="header-nav_menu_phone" class="slide">
+        <div class="slide__content">
+          <p>+7(812)336-16-95</p>
+        </div>
+        <div id="header-nav_phone__close" data-tog="#header-phone_tog" class="close_parent"><a href="#">Закрыть окно</a></div>
+      </div>
+      <ul id="header-nav_menu_mobile" class="slide">
+        <li><a href="about.html">О компании</a></li>
+        <li class="parent"><a href="services.html">Услуги</a>
+          <ul>
+            <li><a href="service_1.html">Системы безопасности</a></li>
+            <li><a href="service_2.html">Пожарные системы</a></li>
+            <li><a href="service_3.html">Системы связи</a></li>
+            <li><a href="service_4.html">Телекоммуникационные системы</a></li>
+          </ul>
+        </li>
+        <li><a href="solutions.html">Решения</a></li>
+        <li><a href="contacts.html">Контакты</a></li>
+        <li id="header-nav_menu__close" data-tog="#header-menuTogl" class="close_parent"><a href="#">Закрыть меню</a></li>
+      </ul>
     </div>
-    <ul id="header-nav_menu_mobile">
-      <li><a href="about.html">О компании</a></li>
-      <li class="parent"><a href="services.html">Услуги</a>
-        <ul>
-          <li><a href="service_1.html">Системы безопасности</a></li>
-          <li><a href="service_2.html">Пожарные системы</a></li>
-          <li><a href="service_3.html">Системы связи</a></li>
-          <li><a href="service_4.html">Телекоммуникационные системы</a></li>
-        </ul>
-      </li>
-      <li><a href="solutions.html">Решения</a></li>
-      <li><a href="contacts.html">Контакты</a></li>
-      <li id="header-nav_menu__close"><a href="#">Закрыть меню</a></li>
-    </ul>
     <main role="main" class="marginBotFix">
       <div id="services" class="section setw">
         <h1>Наши услуги</h1>

@@ -1,50 +1,59 @@
 mixin menu()
-	#header-nav
-		.setw
-			//- a#nav-logo.sprite-logoSymbol(href="index.html")
-			a#nav-logo(href="index.html")
-				span.i-logo
+	#header-nav__container
+		#header-nav
+			.setw
+				//- a#nav-logo.sprite-logoSymbol(href="index.html")
+				a#nav-logo(href="index.html")
+					span.i-logo
 
-			ul#header-nav_menu
-				li: a(href="about.html") О компании
-				//- li: a(href="#") Наши проекты
+				ul#header-nav_menu
+					li: a(href="about.html") О компании
+					//- li: a(href="#") Наши проекты
 
-				li.parent
-					a(href="services.html") Услуги
+					li.parent
+						a(href="services.html") Услуги
 
-					ul
-						li: a(href="service_1.html") Системы безопасности
-						li: a(href="service_2.html") Пожарные системы
-						li: a(href="service_3.html") Системы связи
-						li: a(href="service_4.html") Телекоммуникационные системы
-				
-				li: a(href="solutions.html") Решения
-				li: a(href="contacts.html") Контакты
+						ul
+							li: a(href="service_1.html") Системы безопасности
+							li: a(href="service_2.html") Пожарные системы
+							li: a(href="service_3.html") Системы связи
+							li: a(href="service_4.html") Телекоммуникационные системы
+					
+					li: a(href="solutions.html") Решения
+					li: a(href="contacts.html") Контакты
 
 
-			div#nav-menu.flexmenu
-				a#header-menuTogl.header-nav_btn(href="#")
-					span.i-menu
+				div#nav-menu.flexmenu
+					a#header-menuTogl.header-nav_btn(href="#")
+						span.i-menu
 
-				a#header-phone_tog.header-nav_btn(href="tel:+78123361695")
-					span.i-phone
+					a#header-phone_tog.header-nav_btn(href="tel:+78123361695")
+						span.i-phone
 
-	ul#header-nav_menu_mobile
-		li: a(href="about.html") О компании
-		//- li: a(href="#") Наши проекты
-
-		li.parent
-			a(href="services.html") Услуги
-
-			ul
-				li: a(href="service_1.html") Системы безопасности
-				li: a(href="service_2.html") Пожарные системы
-				li: a(href="service_3.html") Системы связи
-				li: a(href="service_4.html") Телекоммуникационные системы
 		
-		li: a(href="solutions.html") Решения
-		li: a(href="contacts.html") Контакты
-		li#header-nav_menu__close: a(href="#") Закрыть меню
+		#header-nav_menu_phone.slide
+			.slide__content
+				p +7(812)336-16-95
+			#header-nav_phone__close.close_parent(data-tog="#header-phone_tog")
+				a(href="#") Закрыть окно
+
+		ul#header-nav_menu_mobile.slide
+			li: a(href="about.html") О компании
+			//- li: a(href="#") Наши проекты
+
+			li.parent
+				a(href="services.html") Услуги
+
+				ul
+					li: a(href="service_1.html") Системы безопасности
+					li: a(href="service_2.html") Пожарные системы
+					li: a(href="service_3.html") Системы связи
+					li: a(href="service_4.html") Телекоммуникационные системы
+			
+			li: a(href="solutions.html") Решения
+			li: a(href="contacts.html") Контакты
+			li#header-nav_menu__close.close_parent(data-tog="#header-menuTogl")
+				a(href="#") Закрыть меню
 
 
 mixin howItWorks()

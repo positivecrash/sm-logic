@@ -1,6 +1,9 @@
 - IE8 competible
 - column-count fallback
+
+
 - phone: вспл меню для комп, телефон в ссылке для мобил
+ 
 
 
 Для Саши:
