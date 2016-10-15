@@ -112,7 +112,7 @@ jQuery(document).ready(function($){
         if( $w.scrollTop() > showPos){
 
             $('#nav-logo').addClass(ac);
-            $('#nav-menu').addClass(ac);
+            $('#nav-toggles').addClass(ac);
         }
 
         if ($w.scrollTop() > ($('#solutions').offset().top - showPos))
@@ -215,16 +215,14 @@ jQuery(document).ready(function($){
                     .slideDown()
                     .attr('tabindex', 1).focus()
                     .focusout(function(){
-                        $subm.slideUp();
+                        $subm
+                            .slideUp()
+                            .attr('tabindex', -1);
                         $this.removeClass(active);
                     });
 
                 $this.addClass(active);
 
-                // $subm.focusout(function(){
-                //     $subm.slideUp();
-                //     $this.removeClass(active);
-                // });
             }
             else{
                 $subm.slideUp();
@@ -271,112 +269,106 @@ jQuery(document).ready(function($){
 
     /*--- Menu toggle ---*/
 
-    $.fn.toggle = function (options) {
+    // $.fn.toggle = function (options) {
 
-        var settings = $.extend({
-            active:     'active' //active class (toggle with css and media queries)
-        }, options);
-
-
-        return this.each(function () {
-            $el = $(this);
-
-            if(!$el.hasClass(settings.active)){
-                console.log('open');
-
-                $el
-                    .addClass(settings.active)
-                    .attr('tabindex', 1)
-                    .focus(function(){
-                        console.log($el.attr('id') + 'show');
-                    })
-                    .focusout(function(){
-                        console.log('lost');
-                        $el.removeClass(settings.active);
-                    });
-            }
-            else{
-                console.log('open');
-                $el.removeClass(settings.active);
-            }
-
-        });
-
-    };
+    //     var settings = $.extend({
+    //         active:     'active' //active class (toggle with css and media queries)
+    //     }, options);
 
 
+    //     return this.each(function () {
+    //         $el = $(this);
 
-    var classAct = 'active';
+    //         if(!$el.hasClass(settings.active)){
+    //             console.log('open');
 
-    $('.header-nav_btn').on('click', function(){  //no need to cancel default actions here, this function just for set classes, interactions later
-        $o = $(this);
+    //             $el.addClass(settings.active)
+    //                 .attr('tabindex', 1)
+    //                 .focus(function(){
+    //                     console.log('focus');
+    //                 })
+    //                 .focusout(function(){
+    //                     console.log('lost');
+    //                     $el
+    //                         .removeClass(settings.active)
+    //                         .attr('tabindex', -1);
+    //                 });
+    //         }
+    //         else{
+    //             console.log('open');
+    //             $el.removeClass(settings.active);
+    //         }
 
-        if (!$o.hasClass(classAct))
-            $o.addClass(classAct)
-        else
-            $o.removeClass(classAct)
-    });
+    //     });
+
+    // };
 
 
-    $('.close_parent').on('click', function(e){ //close mobile menu or phone call menu
+
+    // var classAct = 'active';
+
+    // $('.header-nav_btn').on('click', function(){  //no need to cancel default actions here, this function just for set classes, interactions later
+    //     $o = $(this);
+
+    //     if (!$o.hasClass(classAct))
+    //         $o.addClass(classAct)
+    //     else
+    //         $o.removeClass(classAct)
+    // });
+
+    // function telDisable(){
+    //     if($w.width() > tablet){
+    //         $('.slide__switch').on('click', function(e){
+    //             e.preventDefault();
+    //             e.stopPropagation();
+    //         });
+    //     }
+    // }
+
+    $('.slide__close').on('click', function(e){ //close mobile menu or phone call menu
         e.preventDefault();
         e.stopPropagation();
 
-        var $this = $(this);
-
-        $this.parent().removeClass(classAct);
-        $($this.data('tog')).removeClass(classAct);
+        $(this).parent().parent('.slide__wrap').blur();
     });
 
 
-    t3 = true;
+    // t3 = true;
 
-    function MenuDesktop(){
-        if(t3 == true){
+    // function MenuDesktop(){
+    //     if(t3 == true){
 
-            if($w.width() > tablet)
-                $menu.removeClass(classAct);
+    //         if($w.width() > tablet)
+    //             $menu.removeClass(classAct);
 
-            t3 = false;
-            setTimeout(function(){t3 = true}, 50);
-        }
-    }
-
-
-
-    $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
-        e.preventDefault();
-        e.stopPropagation();
-
-        $menu.toggle();
-
-        // if($menu.is(':hidden'))
-        //     $menu.addClass(classAct);
-        // else
-        //     $menu.removeClass(classAct);
-    });
+    //         t3 = false;
+    //         setTimeout(function(){t3 = true}, 50);
+    //     }
+    // }
 
 
-    // var $PhoneMenu = $('#header-nav_menu_phone');
 
-    $('#header-phone_tog').on('click', function(e){ //toogle menu with phone call
+    // $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
+    //     e.preventDefault();
+    //     e.stopPropagation();
 
-        if($w.width() > mobile){
-            e.preventDefault();
-            e.stopPropagation();
+    //     $menu.toggle();
+    // });
 
-            $('#header-nav_menu_phone').toggle();
 
-            // if($PhoneMenu.is(':hidden'))
-            //     $PhoneMenu.addClass(classAct);
-            // else
-            //     $PhoneMenu.removeClass(classAct);
-        }
-    });
+    // // var $PhoneMenu = $('#header-nav_menu_phone');
+
+    // $('#header-phone_tog').on('click', function(e){ //toogle menu with phone call
+
+    //     if($w.width() > mobile){
+    //         e.preventDefault();
+    //         e.stopPropagation();
+    //     }
+    // });
     
 
 
-    $w.bind('resize', MenuDesktop); 
+    // $w.bind('resize', MenuDesktop); 
 
     /*===  end of HEADER MENU ===*/
 
