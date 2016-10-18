@@ -1202,9 +1202,13 @@ html, body, #scrn-1, .banner_back {
 .no-flexbox #header-nav_menu {
   margin-top: 16px;
 }
-.no-flexbox #header-nav_menu * > li {
+.no-flexbox #header-nav_menu li {
   display: inline-block;
   width: 20%;
+}
+.no-flexbox #header-nav_menu ul li {
+  display: block;
+  width: 100%;
 }
 .no-flexbox #nav-logo {
   float: left;

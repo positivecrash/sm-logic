@@ -283,9 +283,14 @@ html, body, #scrn-1, .banner_back{
 	#header-nav_menu{
 		margin-top: 16px;
 
-		* > li{
+		li{
 			display: inline-block;
 			width: 20%;
+		}
+
+		ul li{
+			display: block;
+			width: 100%;
 		}
 	}
 
