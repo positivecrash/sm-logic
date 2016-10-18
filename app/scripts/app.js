@@ -243,9 +243,7 @@ jQuery(document).ready(function($){
     if (!Modernizr.flexbox) {
 
         $('.banner_fore').each(function(){
-            mt = ($(this).closest('.banner_back').height() - $(this).height())/2;
-            console.log(mt);
-            css('top', mt);
+            $(this).css('top', ($(this).closest('.banner_back').outerHeight() - $(this).outerHeight())/2);
         });
     }
 
