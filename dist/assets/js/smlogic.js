@@ -5127,12 +5127,13 @@ jQuery(document).ready(function($){
     });
 
 
+
     /*---  Solve display:flex problem for old browsers ---*/
 
     if (!Modernizr.flexbox) {
 
         $('.banner_fore').each(function(){
-            $(this).css('top', ($(this).closest('.banner_back').outerHeight() - $(this).outerHeight())/2);
+            $(this).css('top', ($(this).closest('.banner_back').height() - $(this).innerHeight())/2);
         });
     }
 
