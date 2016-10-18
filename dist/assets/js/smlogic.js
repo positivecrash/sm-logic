@@ -4893,7 +4893,6 @@ jQuery(document).ready(function($){
 	var $d = $(document);
     var $footer = $('footer[role="contentinfo"]');
     var $main = $('main[role="main"]');  //container for main content, sets paddings and margins for parallax effects
-    var $main_container = $('#main__container');  //container for main content, sets paddings and margins for parallax effects
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var $nav = $('#header-nav__container');
@@ -5036,7 +5035,7 @@ jQuery(document).ready(function($){
             if($('#scrn-1').length > 0){
                 if( $w.scrollTop() > $('#scrn-1').height()){
                     $footer.addClass('fixed');
-                    $main.css('margin-bottom', $footer.height());
+                    $main.css('margin-bottom', $footer.height() - 1);
                 }
                 else{
                     $footer.removeClass('fixed');
@@ -5065,21 +5064,15 @@ jQuery(document).ready(function($){
 
     var navPos = $nav.offset().top + 3;
 
-    if( $w.scrollTop() >= navPos ){
+    if( $w.scrollTop() >= navPos )
         $nav.addClass(fixNav);
-        // $main_container.css('padding-top', mainPadTop + $nav.height()); //fix navigation at start if it is on top
-    }
 
     function FixNav(){
 
-        if( $w.scrollTop() >= navPos){
+        if( $w.scrollTop() >= navPos)
             $nav.addClass(fixNav, 2000);
-            // $main_container.css('padding-top', mainPadTop + $nav.height());
-        }
-        else{
+        else
             $nav.removeClass(fixNav, 2000);
-            // $main_container.css('padding-top', mainPadTop );
-        }
     }
     $w.bind('scroll', FixNav);
 
@@ -5122,8 +5115,8 @@ jQuery(document).ready(function($){
     });
 
 
-    /*---  Close mobile menu or phone call menu ---*/
 
+    /*---  Solve focus problems ---*/
 
     $('.slide__wrap form, .slide__wrap form *')
     .focus(function() {
@@ -5134,14 +5127,12 @@ jQuery(document).ready(function($){
     });
 
 
+    /*---  Solve display:flex problem for old browsers ---*/
 
-
-    // $('.slide__close').on('click', function(e){
-    //     e.preventDefault();
-    //     e.stopPropagation();
-
-    //     $(this).closest('.slide__wrap').blur();
-    // });
+    if (!Modernizr.flexbox) {
+        var mt = ($(this).closest('.banner_back').height() - $(this).height())/2;
+        $('.banner_fore').css('top', mt);
+    }
 
 
 
@@ -5152,6 +5143,7 @@ jQuery(document).ready(function($){
 
     /*===  SOME RANDOM THIGS ===*/
     $('input[placeholder], textarea[placeholder]').placeholderEnhanced();
+
 
     /*--- Google Map controlling scroll ---*/
     $('#footer-map')

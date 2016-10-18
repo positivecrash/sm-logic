@@ -504,6 +504,7 @@ main[role="main"]{
   position: relative;
   z-index: 1;
 
+  background-color: $color-blue-2; //for old IE versions
   background-color: rgba($color-blue-2, .5);
   color: #fff;
 
@@ -553,6 +554,7 @@ main[role="main"]{
 
 
     .banner_fore:after{
+      background-color: $color-blue-2;  //for old IE versions
       background-color: rgba($color-blue-2, .5);
     }
         

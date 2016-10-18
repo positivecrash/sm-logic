@@ -121,9 +121,6 @@ html, body, #scrn-1, .banner_back{
 	}
 }
 
-// .slide__content{
-// 	padding: 30px;
-// }
 
 .slide__close{
 	display: block;
@@ -155,12 +152,15 @@ html, body, #scrn-1, .banner_back{
 
 
 
-
-
 #header-nav__container{
 	position: relative;
 	z-index: 10;
 	transition: .5s ease-out all;
+
+
+  	a::selection{
+    	background-color: rgba(#fff, 0);
+  	}
 
 	.slide{
 		top: $header_h;
@@ -232,6 +232,66 @@ html, body, #scrn-1, .banner_back{
 		border-color: $color-blue-3;
 	}
 }
+
+
+//--- for old ie
+#{$modernizr-noflexbox} {
+	#header-nav__container{
+		
+
+		#header-nav{
+			width: 100%;
+		}
+
+		.setw{
+			text-align: center;
+
+			& > *{
+				display: inline-block;
+				vertical-align: middle;
+			}
+		}
+
+		#nav-toggles__phone{
+			display: table-cell;
+			vertical-align: middle;
+
+			.slide{
+				top: $header_h - 4;
+			}
+		}
+
+		&.fixed{
+			#nav-toggles__phone .slide{
+				top: $header_h__m - 4;
+			}
+		}
+
+		@include max_tablet(){
+			.header-nav_btn{
+				display: inline-block !important;
+				vertical-align: middle !important;
+			}
+		}
+
+	}
+
+	#header-nav_menu > li{
+		display: inline-block;
+		width: 20%;
+	}
+
+	#nav-logo{
+		float: left;
+		margin-top: 4px;
+	}
+
+	#nav-toggles{
+		float: right;
+		margin-top: 12px;
+	}
+}
+//---
 
 
 
@@ -561,14 +621,10 @@ html, body, #scrn-1, .banner_back{
 
 @include max_tablet(){
 	
-	#header-nav_menu{
+	#header-nav_menu, #{$modernizr-noflexbox} #header-nav #header-nav_menu {
 		display: none;
 	}
 
-
-	// #header-nav #nav-toggles__menu{
-	// 	display: flex;
-	// }
 
 	#nav-toggles__menu{ 
 		display: flex;
