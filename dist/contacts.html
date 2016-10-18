@@ -15,7 +15,6 @@
     <link rel="apple-touch-icon" sizes="72x72" href="apple-touch-icon-72x72.png">
   </head>
   <body>
-    <!--[if lte IE 8]><div id="oldiebrowser"><h1>Уважаемый покупатель, вы используете сильно устаревшую версию браузера</h1><p>Для полнценной и более приятной работы с нашим интернет-магазином, пожалуйста, обновите свой браузер до новой версии. Или скачайте новую версию браузера другой компании из официальных источников (например, Google Chrome, Yandex браузер, Mozilla Firefox).</p></div><![endif]-->
     <div id="header-nav__container">
       <div id="header-nav">
         <div class="setw"><a id="nav-logo" href="index.html"><span class="i-logo"></span></a>
@@ -75,54 +74,59 @@
       </div>
     </div>
     <main role="main" class="marginBotFix">
-      <div class="setw">
-        <h1>Контакты</h1>
-        <div class="grid section">
-          <div class="grid-3">
-            <div class="t-title__l">Адрес</div>
-            <p>г. Санкт-Петербург, пр-т Обуховской обороны дом 51 лит к БЦ «Арка»</p>
+      <!--[if lte IE 8]><div id="oldiebrowser"><h1>Уважаемый пользователь, вы используете сильно устаревшую версию браузера</h1><p>Для полнценной и более приятной работы с нашим сайтом, пожалуйста, обновите свой браузер до новой версии. Или скачайте новую версию браузера другой компании из официальных источников (например, Google Chrome, Yandex браузер, Mozilla Firefox).</p></div><![endif]-->
+      
+      
+      <div id="main__container">
+        <div class="setw">
+          <h1>Контакты</h1>
+          <div class="grid section">
+            <div class="grid-3">
+              <div class="t-title__l">Адрес</div>
+              <p>г. Санкт-Петербург, пр-т Обуховской обороны дом 51 лит к БЦ «Арка»</p>
+            </div>
+            <div class="grid-3">
+              <div class="t-title__l">Телефон</div><a href="tel:+78123361695">+7 (812) 336-16-95</a>
+            </div>
+            <div class="grid-3">
+              <div class="t-title__l">Время работы</div>
+              <p>Пн-Пт 10.00 - 18.00 по московскому времени</p>
+            </div>
           </div>
-          <div class="grid-3">
-            <div class="t-title__l">Телефон</div><a href="tel:+78123361695">+7 (812) 336-16-95</a>
+          <div class="grid section">
+            <div class="grid-3"></div>
+            <div class="grid-3">
+              <div class="t-title__l">Обратная связь</div>
+              <form>
+                <label class="wrap__inp_block">
+                  <input type="email" placeholder="Ваш email" class="inp-block">
+                </label>
+                <label class="wrap__inp_block">
+                  <input type="text" placeholder="Ваше имя" class="inp-block">
+                </label>
+                <label class="wrap__inp_block">
+                  <textarea placeholder="Сообщение" class="inp-block"></textarea>
+                </label>
+                <input type="submit" value="Отправить" class="inp-block">
+              </form>
+              <form style="display:none">
+                <label class="wrap__inp_block">
+                  <input type="email" placeholder="Ваш email" class="inp-block err">
+                  <div class="err msg">Введите, пожалуйста, ваш email</div>
+                </label>
+                <label class="wrap__inp_block">
+                  <input type="text" placeholder="Ваше имя" class="inp-block">
+                </label>
+                <label class="wrap__inp_block">
+                  <textarea placeholder="Сообщение" class="inp-block"></textarea>
+                </label>
+                <input type="submit" value="Отправлено" class="inp-block confirmed">
+                <div class="err msg">Ваше сообщение не было отправлено</div>
+                <div class="ok msg">Ваше сообщение успешно отправлено</div>
+              </form>
+            </div>
+            <div class="grid-3"> </div>
           </div>
-          <div class="grid-3">
-            <div class="t-title__l">Время работы</div>
-            <p>Пн-Пт 10.00 - 18.00 по московскому времени</p>
-          </div>
-        </div>
-        <div class="grid section">
-          <div class="grid-3"></div>
-          <div class="grid-3">
-            <div class="t-title__l">Обратная связь</div>
-            <form>
-              <label class="wrap__inp_block">
-                <input type="email" placeholder="Ваш email" class="inp-block">
-              </label>
-              <label class="wrap__inp_block">
-                <input type="text" placeholder="Ваше имя" class="inp-block">
-              </label>
-              <label class="wrap__inp_block">
-                <textarea placeholder="Сообщение" class="inp-block"></textarea>
-              </label>
-              <input type="submit" value="Отправить" class="inp-block">
-            </form>
-            <form style="display:none">
-              <label class="wrap__inp_block">
-                <input type="email" placeholder="Ваш email" class="inp-block err">
-                <div class="err msg">Введите, пожалуйста, ваш email</div>
-              </label>
-              <label class="wrap__inp_block">
-                <input type="text" placeholder="Ваше имя" class="inp-block">
-              </label>
-              <label class="wrap__inp_block">
-                <textarea placeholder="Сообщение" class="inp-block"></textarea>
-              </label>
-              <input type="submit" value="Отправлено" class="inp-block confirmed">
-              <div class="err msg">Ваше сообщение не было отправлено</div>
-              <div class="ok msg">Ваше сообщение успешно отправлено</div>
-            </form>
-          </div>
-          <div class="grid-3"> </div>
         </div>
       </div>
     </main>

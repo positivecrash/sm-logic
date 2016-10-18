@@ -11,32 +11,35 @@ block content
 	+menu()
 
 	main(role="main").marginBotFix
-		#services.section.setw
-			h1 Наши услуги
-			.textSection
-				p Помимо комплексных решений вы можете обратиться к нам с заказом любой услуги отдельно.
+		+OldBrowserMsg()
 
-			.IconsTexts.grid
-				.grid-4
-					a(href="service_1.html")
-						span.sprite-camera
-					a(href="service_1.html") Cистемы безопасности
+		#main__container
+			#services.section.setw
+				h1 Наши услуги
+				.textSection
+					p Помимо комплексных решений вы можете обратиться к нам с заказом любой услуги отдельно.
 
-				.grid-4
-					a(href="service_2.html")
-						span.sprite-alarm
-					a(href="service_2.html") Пожарные системы
+				.IconsTexts.grid
+					.grid-4
+						a(href="service_1.html")
+							span.sprite-camera
+						a(href="service_1.html") Cистемы безопасности
 
-				.grid-4
-					a(href="service_3.html")
-						span.sprite-server
-					a(href="service_3.html") Системы связи
+					.grid-4
+						a(href="service_2.html")
+							span.sprite-alarm
+						a(href="service_2.html") Пожарные системы
 
-				.grid-4
-					a(href="service_4.html")
-						span.sprite-satellite
-					a(href="service_4.html") Телекоммуникационные системы
+					.grid-4
+						a(href="service_3.html")
+							span.sprite-server
+						a(href="service_3.html") Системы связи
 
-		.section-gray
-			+howItWorks
-		
+					.grid-4
+						a(href="service_4.html")
+							span.sprite-satellite
+						a(href="service_4.html") Телекоммуникационные системы
+
+			.section-gray
+				+howItWorks
+			

@@ -49,7 +49,7 @@ input, select {
   }
 }
 
-input, textarea, .btn-primary, input[type='submit'], #footer-bottom #footer-bottom_logo, .d-b img, .d-ib, .grid-4, .grid-3, .grid-2 {
+input, textarea, select, .btn-primary, input[type='submit'], #footer-bottom #footer-bottom_logo, .d-b img, .d-ib, .grid-4, .grid-3, .grid-2 {
   display: -moz-inline-stack;
   display: inline-block;
   vertical-align: middle;
@@ -82,7 +82,7 @@ input, textarea, .btn-primary, input[type='submit'], #footer-bottom #footer-bott
   margin: 0 auto;
 }
 
-h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .fbx-close, input, textarea, .btn-primary, input[type='submit'], .roundSwitch, #nav-logo, .tabs .tab-line .tab_tog a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .fbx-close:hover, input:hover, textarea:hover, .btn-primary:hover, .roundSwitch:hover, #nav-logo:hover, .tabs .tab-line .tab_tog a:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .fbx-close:focus, input:focus, textarea:focus, .btn-primary:focus, .roundSwitch:focus, #nav-logo:focus, .tabs .tab-line .tab_tog a:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, .fbx-close:visited, input:visited, textarea:visited, .btn-primary:visited, .roundSwitch:visited, #nav-logo:visited, .tabs .tab-line .tab_tog a:visited {
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .fbx-close, input, textarea, select, .btn-primary, input[type='submit'], .roundSwitch, #nav-logo, .tabs .tab-line .tab_tog a, h1 a:hover, h2 a:hover, h3 a:hover, h4 a:hover, h5 a:hover, h6 a:hover, .fbx-close:hover, input:hover, textarea:hover, select:hover, .btn-primary:hover, .roundSwitch:hover, #nav-logo:hover, .tabs .tab-line .tab_tog a:hover, h1 a:focus, h2 a:focus, h3 a:focus, h4 a:focus, h5 a:focus, h6 a:focus, .fbx-close:focus, input:focus, textarea:focus, select:focus, .btn-primary:focus, .roundSwitch:focus, #nav-logo:focus, .tabs .tab-line .tab_tog a:focus, h1 a:visited, h2 a:visited, h3 a:visited, h4 a:visited, h5 a:visited, h6 a:visited, .fbx-close:visited, input:visited, textarea:visited, select:visited, .btn-primary:visited, .roundSwitch:visited, #nav-logo:visited, .tabs .tab-line .tab_tog a:visited {
   text-decoration: none;
   text-decoration: none !important;
 }
@@ -889,7 +889,7 @@ blockquote:last-child, p:last-child, li:last-child, .textSection:last-child {
   }
 }
 
-input, textarea, .btn-primary, input[type='submit'] {
+input, textarea, select, .btn-primary, input[type='submit'] {
   box-sizing: border-box;
   font: 14px/1.2 "Avenir Next", Arial, Tahoma, Verdana, sans-serif;
   border-radius: 2px;
@@ -898,31 +898,31 @@ input, textarea, .btn-primary, input[type='submit'] {
   border: 1px solid #95989A;
   color: #333;
 }
-input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, .btn-primary::-webkit-input-placeholder, input[type='submit']::-webkit-input-placeholder {
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder, select::-webkit-input-placeholder, .btn-primary::-webkit-input-placeholder, input[type='submit']::-webkit-input-placeholder {
   color: #5C5C5C;
 }
-input::-moz-placeholder, textarea::-moz-placeholder, .btn-primary::-moz-placeholder, input[type='submit']::-moz-placeholder {
+input::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder, .btn-primary::-moz-placeholder, input[type='submit']::-moz-placeholder {
   color: #5C5C5C;
 }
-input:-ms-input-placeholder, textarea:-ms-input-placeholder, .btn-primary:-ms-input-placeholder, input[type='submit']:-ms-input-placeholder {
+input:-ms-input-placeholder, textarea:-ms-input-placeholder, select:-ms-input-placeholder, .btn-primary:-ms-input-placeholder, input[type='submit']:-ms-input-placeholder {
   color: #5C5C5C;
 }
-input::placeholder, textarea::placeholder, .btn-primary::placeholder, input[type='submit']::placeholder {
+input::placeholder, textarea::placeholder, select::placeholder, .btn-primary::placeholder, input[type='submit']::placeholder {
   color: #5C5C5C;
 }
-input:focus, textarea:focus, .btn-primary:focus {
+input:focus, textarea:focus, select:focus, .btn-primary:focus {
   border-color: #5C5C5C;
 }
-input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, .btn-primary:focus::-webkit-input-placeholder {
+input:focus::-webkit-input-placeholder, textarea:focus::-webkit-input-placeholder, select:focus::-webkit-input-placeholder, .btn-primary:focus::-webkit-input-placeholder {
   color: #95989A;
 }
-input:focus::-moz-placeholder, textarea:focus::-moz-placeholder, .btn-primary:focus::-moz-placeholder {
+input:focus::-moz-placeholder, textarea:focus::-moz-placeholder, select:focus::-moz-placeholder, .btn-primary:focus::-moz-placeholder {
   color: #95989A;
 }
-input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder, .btn-primary:focus:-ms-input-placeholder {
+input:focus:-ms-input-placeholder, textarea:focus:-ms-input-placeholder, select:focus:-ms-input-placeholder, .btn-primary:focus:-ms-input-placeholder {
   color: #95989A;
 }
-input:focus::placeholder, textarea:focus::placeholder, .btn-primary:focus::placeholder {
+input:focus::placeholder, textarea:focus::placeholder, select:focus::placeholder, .btn-primary:focus::placeholder {
   color: #95989A;
 }
 
@@ -933,7 +933,7 @@ input:focus::placeholder, textarea:focus::placeholder, .btn-primary:focus::place
   margin-bottom: 10.5px;
 }
 
-input.err, textarea.err {
+input.err, textarea.err, select.err {
   border-color: #E61334;
 }
 
@@ -1480,6 +1480,19 @@ footer[role='contentinfo'].fixed {
 
 /*======== MAIN SCSS VARIABLES & MIXINS & EXTENDS =========*/
 /*======== BASIC STYLES =========*/
+#oldiebrowser {
+  padding: 30px;
+  text-align: center;
+  background-color: #ff674a;
+  font-size: 16px;
+}
+#oldiebrowser h1 {
+  margin-bottom: 30px;
+}
+#oldiebrowser, #oldiebrowser h1 {
+  color: #fff;
+}
+
 body {
   background-color: #fff;
   position: relative;
@@ -1487,11 +1500,14 @@ body {
 
 main[role="main"] {
   position: relative;
-  padding: 84px 0 0;
   background-color: #fff;
   z-index: 3;
 }
-main[role="main"]#main-index {
+main[role="main"] #main__container {
+  background-color: #fff;
+  padding: 84px 0 0;
+}
+main[role="main"]#main-index #main__container {
   padding-top: 0;
 }
 
@@ -2066,11 +2082,6 @@ main[role="main"]#main-index {
 
 /*======== END OF PAGE INDEX =========*/
 /*======== SERVICES =========*/
-@media screen and (max-width: 670px) {
-  .p-service main[role="main"] {
-    padding-top: 63px !important;
-  }
-}
 .p-service .banner_fore, .p-service .banner_fore:after {
   background: none;
   backdrop-filter: none;

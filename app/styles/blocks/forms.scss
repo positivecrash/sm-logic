@@ -36,7 +36,7 @@
 	margin-bottom: $vertical-rythm / 2;
 }
 
-input, textarea{
+input, textarea, select{
 	@extend %form_el_base;
 
 	&.err{

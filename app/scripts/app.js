@@ -3,7 +3,8 @@ jQuery(document).ready(function($){
 	var $w = $(window);
 	var $d = $(document);
     var $footer = $('footer[role="contentinfo"]');
-    var $main = $('main[role="main"]');
+    var $main = $('main[role="main"]');  //container for main content, sets paddings and margins for parallax effects
+    var $main_container = $('#main__container');  //container for main content, sets paddings and margins for parallax effects
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
     var $nav = $('#header-nav__container');
@@ -177,18 +178,18 @@ jQuery(document).ready(function($){
 
     if( $w.scrollTop() >= navPos ){
         $nav.addClass(fixNav);
-        $main.css('padding-top', mainPadTop + $nav.height()); //fix navigation at start if it is on top
+        // $main_container.css('padding-top', mainPadTop + $nav.height()); //fix navigation at start if it is on top
     }
 
     function FixNav(){
 
         if( $w.scrollTop() >= navPos){
             $nav.addClass(fixNav, 2000);
-            $main.css('padding-top', mainPadTop + $nav.height());
+            // $main_container.css('padding-top', mainPadTop + $nav.height());
         }
         else{
             $nav.removeClass(fixNav, 2000);
-            $main.css('padding-top', mainPadTop );
+            // $main_container.css('padding-top', mainPadTop );
         }
     }
     $w.bind('scroll', FixNav);

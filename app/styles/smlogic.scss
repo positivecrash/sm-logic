@@ -27,6 +27,21 @@
 
 /*======== BASIC STYLES =========*/
 
+#oldiebrowser{
+  padding: 30px;
+  text-align: center;
+  background-color: rgb(255, 103, 74);
+  font-size: 16px;
+
+  h1{
+    margin-bottom: 30px;
+  }
+
+  &, h1{
+    color: #fff;
+  }
+}
+
 body {
   background-color: #fff;
   position: relative;
@@ -35,12 +50,15 @@ body {
 main[role="main"]{
 
   position: relative;
-  padding: $vertical-rythm * 4 0 0;
   background-color: #fff;
   z-index: 3;
 
+  #main__container{
+    background-color: #fff;
+    padding: $vertical-rythm * 4 0 0;
+  }
 
-  &#main-index{
+  &#main-index #main__container{
     padding-top: 0;
   }
 
@@ -830,11 +848,11 @@ main[role="main"]{
 /*======== SERVICES =========*/
 .p-service{
 
-  main[role="main"]{
-     @include mobile(){
-      padding-top: $vertical-rythm * 3 !important;
-    }
-  }
+  // main[role="main"]{
+  //    @include mobile(){
+  //     padding-top: $vertical-rythm * 3 !important;
+  //   }
+  // }
 
   .banner_fore{
     &, &:after{
