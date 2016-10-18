@@ -4895,12 +4895,9 @@ jQuery(document).ready(function($){
     var $main = $('main[role="main"]');
     var $menu = $('#header-nav_menu_mobile');  //mobile menu
 
-    var ac = 'a-show'; //class for animations
-    // var $nav = $('#header-nav');
     var $nav = $('#header-nav__container');
     var fixNav = 'fixed'; //class for fixed navigation
 
-    var t = true; // counter for some timers (not to repeat every ms something, e.g. while srolling)
     var mainPadTop = 84; // padding-top for main, for summ while fixing menu
     var mobile = 670; //media query
     var tablet = 820; //media query
@@ -4994,6 +4991,8 @@ jQuery(document).ready(function($){
 
     /*===  Index animation while scrolling ===*/
 
+    var ac = 'a-show'; //class for animations
+
     function IndexAnimation(){
 
         var showPos = 350;
@@ -5073,11 +5072,11 @@ jQuery(document).ready(function($){
     function FixNav(){
 
         if( $w.scrollTop() >= navPos){
-            $nav.addClass(fixNav);
+            $nav.addClass(fixNav, 2000);
             $main.css('padding-top', mainPadTop + $nav.height());
         }
         else{
-            $nav.removeClass(fixNav);
+            $nav.removeClass(fixNav, 2000);
             $main.css('padding-top', mainPadTop );
         }
     }
@@ -5087,6 +5086,7 @@ jQuery(document).ready(function($){
 
 
     /*---  Submenu interactions, for desctop ---*/
+
     $('#header-nav_menu .parent > a').on('click', function(e){
         
         if($w.width() > mobile){
@@ -5121,145 +5121,31 @@ jQuery(document).ready(function($){
     });
 
 
+    /*---  Close mobile menu or phone call menu ---*/
 
 
-    /*---  Adjust "top" property for slides ---*/
-    // var t2 = true; //timer switch
-    // var $slide = $('.slide');
-    
-    // $slide.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
-
-    // function SetTopForSlide(){
-
-    //     if(t2 == true){
-    //         $slide.css('top', $nav.offset().top - $w.scrollTop() + $nav.outerHeight(true));
-
-    //         t2 = false;
-    //         setTimeout(function(){t2 = true}, 10);
-    //     }
-    // }
-
-    // $w.bind('scroll', SetTopForSlide);
+    $('.slide__wrap form, .slide__wrap form *')
+    .focus(function() {
+        $(this).closest('.slide__wrap').addClass('formfocused');
+    })
+    .blur(function(){
+        $(this).closest('.slide__wrap').removeClass('formfocused');
+    });
 
 
+
+
+    // $('.slide__close').on('click', function(e){
+    //     e.preventDefault();
+    //     e.stopPropagation();
+
+    //     $(this).closest('.slide__wrap').blur();
+    // });
 
 
 
     /*===  end of Header interactions ===*/
 
-
-
-
-
-
-
-    /*===  HEADER MENU ===*/
-
-
-    /*--- Menu toggle ---*/
-
-    // $.fn.toggle = function (options) {
-
-    //     var settings = $.extend({
-    //         active:     'active' //active class (toggle with css and media queries)
-    //     }, options);
-
-
-    //     return this.each(function () {
-    //         $el = $(this);
-
-    //         if(!$el.hasClass(settings.active)){
-    //             console.log('open');
-
-    //             $el.addClass(settings.active)
-    //                 .attr('tabindex', 1)
-    //                 .focus(function(){
-    //                     console.log('focus');
-    //                 })
-    //                 .focusout(function(){
-    //                     console.log('lost');
-    //                     $el
-    //                         .removeClass(settings.active)
-    //                         .attr('tabindex', -1);
-    //                 });
-    //         }
-    //         else{
-    //             console.log('open');
-    //             $el.removeClass(settings.active);
-    //         }
-
-    //     });
-
-    // };
-
-
-
-    // var classAct = 'active';
-
-    // $('.header-nav_btn').on('click', function(){  //no need to cancel default actions here, this function just for set classes, interactions later
-    //     $o = $(this);
-
-    //     if (!$o.hasClass(classAct))
-    //         $o.addClass(classAct)
-    //     else
-    //         $o.removeClass(classAct)
-    // });
-
-    // function telDisable(){
-    //     if($w.width() > tablet){
-    //         $('.slide__switch').on('click', function(e){
-    //             e.preventDefault();
-    //             e.stopPropagation();
-    //         });
-    //     }
-    // }
-
-    $('.slide__close').on('click', function(e){ //close mobile menu or phone call menu
-        e.preventDefault();
-        e.stopPropagation();
-
-        $(this).parent().parent('.slide__wrap').blur();
-    });
-
-
-    // t3 = true;
-
-    // function MenuDesktop(){
-    //     if(t3 == true){
-
-    //         if($w.width() > tablet)
-    //             $menu.removeClass(classAct);
-
-    //         t3 = false;
-    //         setTimeout(function(){t3 = true}, 50);
-    //     }
-    // }
-
-
-
-    // $('#header-menuTogl').on('click', function(e){ //toogle mobile menu
-    //     e.preventDefault();
-    //     e.stopPropagation();
-
-    //     $menu.toggle();
-    // });
-
-
-    // // var $PhoneMenu = $('#header-nav_menu_phone');
-
-    // $('#header-phone_tog').on('click', function(e){ //toogle menu with phone call
-
-    //     if($w.width() > mobile){
-    //         e.preventDefault();
-    //         e.stopPropagation();
-    //     }
-    // });
-    
-
-
-    // $w.bind('resize', MenuDesktop); 
-
-    /*===  end of HEADER MENU ===*/
 
 
 

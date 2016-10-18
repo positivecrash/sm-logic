@@ -1,10 +1,6 @@
 - IE8 competible
 - column-count fallback
 
-
-- привести в порядок стили dropdown in header
-- заменить slideUp/slideDown на css dropdown
-
 - стили для select
  
 

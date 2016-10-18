@@ -27,21 +27,22 @@ mixin menu()
 							span.i-menu
 
 						.slide
-							ul#header-nav_menu_mobile
-								li: a(href="about.html") О компании
+							.slide__content
+								ul#header-nav_menu_mobile
+									li: a(href="about.html") О компании
 
-								li.parent
-									a(href="services.html") Услуги
+									li.parent
+										a(href="services.html") Услуги
 
-									ul
-										li: a(href="service_1.html") Системы безопасности
-										li: a(href="service_2.html") Пожарные системы
-										li: a(href="service_3.html") Системы связи
-										li: a(href="service_4.html") Телекоммуникационные системы
-								
-								li: a(href="solutions.html") Решения
-								li: a(href="contacts.html") Контакты
-							a.slide__close(href="javascript:;") Закрыть окно
+										ul
+											li: a(href="service_1.html") Системы безопасности
+											li: a(href="service_2.html") Пожарные системы
+											li: a(href="service_3.html") Системы связи
+											li: a(href="service_4.html") Телекоммуникационные системы
+									
+									li: a(href="solutions.html") Решения
+									li: a(href="contacts.html") Контакты
+								a.slide__close(href="javascript:;", tabindex="1") Закрыть окно
 
 
 
@@ -51,8 +52,22 @@ mixin menu()
 			
 						.slide
 							.slide__content
-								a(href="tel:+78123361695") +7(812)336-16-95
-							a.slide__close(href="javascript:;") Закрыть окно
+								#nav-toggles__phone__c
+									a.nav__phone(href="tel:+78123361695") +7(812)336-16-95
+									p
+										| Консультация по телефону
+										br/
+										| Пн-Пт   10.00 - 18.00 по московскому времени
+
+									form(tabindex="-1")
+										label.wrap__inp_block
+											input.inp-block(type="text", placeholder="Ваш телефон")
+										label.wrap__inp_block
+											input.inp-block(type="text", placeholder="Ваше имя")
+										input.inp-block(type="submit", value="Заказать обратный звонок")
+
+
+								a.slide__close(href="javascript:;", tabindex="1") Закрыть окно
 
 
 

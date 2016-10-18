@@ -48,24 +48,39 @@
           <div id="nav-toggles">
             <div id="nav-toggles__menu" tabindex="1" class="header-nav_btn slide__wrap"><a href="javascript:;" class="roundSwitch"><span class="i-menu"></span></a>
               <div class="slide">
-                <ul id="header-nav_menu_mobile">
-                  <li><a href="about.html">О компании</a></li>
-                  <li class="parent"><a href="services.html">Услуги</a>
-                    <ul>
-                      <li><a href="service_1.html">Системы безопасности</a></li>
-                      <li><a href="service_2.html">Пожарные системы</a></li>
-                      <li><a href="service_3.html">Системы связи</a></li>
-                      <li><a href="service_4.html">Телекоммуникационные системы</a></li>
-                    </ul>
-                  </li>
-                  <li><a href="solutions.html">Решения</a></li>
-                  <li><a href="contacts.html">Контакты</a></li>
-                </ul><a href="javascript:;" class="slide__close">Закрыть окно</a>
+                <div class="slide__content">
+                  <ul id="header-nav_menu_mobile">
+                    <li><a href="about.html">О компании</a></li>
+                    <li class="parent"><a href="services.html">Услуги</a>
+                      <ul>
+                        <li><a href="service_1.html">Системы безопасности</a></li>
+                        <li><a href="service_2.html">Пожарные системы</a></li>
+                        <li><a href="service_3.html">Системы связи</a></li>
+                        <li><a href="service_4.html">Телекоммуникационные системы</a></li>
+                      </ul>
+                    </li>
+                    <li><a href="solutions.html">Решения</a></li>
+                    <li><a href="contacts.html">Контакты</a></li>
+                  </ul><a href="javascript:;" tabindex="1" class="slide__close">Закрыть окно</a>
+                </div>
               </div>
             </div>
             <div id="nav-toggles__phone" tabindex="1" class="header-nav_btn slide__wrap"><a href="javascript:;" class="roundSwitch"><span class="i-phone"></span></a>
               <div class="slide">
-                <div class="slide__content"><a href="tel:+78123361695">+7(812)336-16-95</a></div><a href="javascript:;" class="slide__close">Закрыть окно</a>
+                <div class="slide__content">
+                  <div id="nav-toggles__phone__c"><a href="tel:+78123361695" class="nav__phone">+7(812)336-16-95</a>
+                    <p>Консультация по телефону<br/>Пн-Пт   10.00 - 18.00 по московскому времени</p>
+                    <form tabindex="-1">
+                      <label class="wrap__inp_block">
+                        <input type="text" placeholder="Ваш телефон" class="inp-block"/>
+                      </label>
+                      <label class="wrap__inp_block">
+                        <input type="text" placeholder="Ваше имя" class="inp-block"/>
+                      </label>
+                      <input type="submit" value="Заказать обратный звонок" class="inp-block"/>
+                    </form>
+                  </div><a href="javascript:;" tabindex="1" class="slide__close">Закрыть окно</a>
+                </div>
               </div>
             </div>
           </div>
