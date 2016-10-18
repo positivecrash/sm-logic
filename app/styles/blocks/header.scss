@@ -252,6 +252,10 @@ html, body, #scrn-1, .banner_back{
 			}
 		}
 
+		.roundSwitch{
+			display: block;
+		}
+
 		#nav-toggles__phone{
 			display: table-cell;
 			vertical-align: middle;
@@ -276,19 +280,23 @@ html, body, #scrn-1, .banner_back{
 
 	}
 
-	#header-nav_menu > li{
-		display: inline-block;
-		width: 20%;
+	#header-nav_menu{
+		margin-top: 16px;
+
+		* > li{
+			display: inline-block;
+			width: 20%;
+		}
 	}
 
 	#nav-logo{
 		float: left;
-		margin-top: 4px;
+		margin-top: 14px;
 	}
 
 	#nav-toggles{
 		float: right;
-		margin-top: 12px;
+		// margin-top: 12px;
 	}
 }
 //---

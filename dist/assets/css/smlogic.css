@@ -1180,6 +1180,9 @@ html, body, #scrn-1, .banner_back {
   display: inline-block;
   vertical-align: middle;
 }
+.no-flexbox #header-nav__container .roundSwitch {
+  display: block;
+}
 .no-flexbox #header-nav__container #nav-toggles__phone {
   display: table-cell;
   vertical-align: middle;
@@ -1196,17 +1199,19 @@ html, body, #scrn-1, .banner_back {
     vertical-align: middle !important;
   }
 }
-.no-flexbox #header-nav_menu > li {
+.no-flexbox #header-nav_menu {
+  margin-top: 16px;
+}
+.no-flexbox #header-nav_menu * > li {
   display: inline-block;
   width: 20%;
 }
 .no-flexbox #nav-logo {
   float: left;
-  margin-top: 4px;
+  margin-top: 14px;
 }
 .no-flexbox #nav-toggles {
   float: right;
-  margin-top: 12px;
 }
 
 #header-nav_menu, #header-nav .slide {

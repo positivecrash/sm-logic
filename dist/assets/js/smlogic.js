@@ -5130,8 +5130,12 @@ jQuery(document).ready(function($){
     /*---  Solve display:flex problem for old browsers ---*/
 
     if (!Modernizr.flexbox) {
-        var mt = ($(this).closest('.banner_back').height() - $(this).height())/2;
-        $('.banner_fore').css('top', mt);
+
+        $('.banner_fore').each(function(){
+            mt = ($(this).closest('.banner_back').height() - $(this).height())/2;
+            console.log(mt);
+            css('top', mt);
+        });
     }
 
 
