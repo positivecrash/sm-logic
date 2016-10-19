@@ -770,12 +770,6 @@ main[role="main"]{
     
   }
 
-  @include min_tablet(){
-    &:last-child .blocks-i{
-      margin-bottom: 0;
-    }
-  }
-
   @include max_tablet(){
 
     column-count: 1;
@@ -800,6 +794,14 @@ main[role="main"]{
     }
   }
 
+}
+
+#{$modernizr-csscolumns}{
+  @include min_tablet(){
+    .blocks .blocks-i:last-child .blocks-i{
+      margin-bottom: 0;
+    }
+  }
 }
 
 /*======== END OF ELEMENTS =========*/

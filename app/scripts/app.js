@@ -106,7 +106,7 @@ jQuery(document).ready(function($){
 
     function IndexAnimation(){
 
-        var showPos = 350;
+        var showPos = 400;
 
         if( $w.scrollTop() > showPos){
 
