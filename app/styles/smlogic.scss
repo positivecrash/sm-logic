@@ -350,6 +350,52 @@ main[role="main"]{
 
 
 /*------- ELEMENTS - TABLES --------*/
+table{
+  margin: $vertical-rythm*2 0;
+
+  td, th {
+    color: $color-table-text;
+    padding: 10px 5px 10px 20px;
+    vertical-align: top;
+    border-style: solid;
+  }
+
+  tfoot td, th {
+    font: bold 16px/1 $font-family-second;
+    text-align: left;
+  }
+
+  th {
+    border-width: 0 0 1px;
+    border-color: $color-table-head-border;
+    color: $color-table-head-text;
+    background-color: $color-table-head-back;
+  }
+
+  tfoot td{
+    font-size: $font-base-size;
+    border-width: 1px 0 0;
+    color: $color-table-foot-text;
+    border-color: $color-table-foot-border;
+    background-color: $color-table-foot-back;
+  }
+
+
+  tbody{
+    td{
+      border-width: 0 0 1px;
+      color: $color-table-text;
+      border-color: $color-table-border;
+    }
+
+    tr:hover td {
+      color: darken($color-table-text, 40%);
+    }
+  }
+
+}
+
+
 // table{
 //   margin: $vertical-rythm*2 0;
 

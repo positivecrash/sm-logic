@@ -359,14 +359,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .fbx-close, input, textarea, select, .btn-pr
 
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Demi.eot?1476866933');
-  src: url('../fonts/AvenirNextCyr-Demi.eot?&1476866933#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1476866933') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?1476869291');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?&1476869291#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1476869291') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Bold.eot?1476866933');
-  src: url('../fonts/AvenirNextCyr-Bold.eot?&1476866933#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1476866933') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?1476869291');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?&1476869291#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1476869291') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
   font-weight: bold;
 }
 body, .grid-4, .grid-3, .grid-2, .tabs .tab_text {
@@ -1818,6 +1818,41 @@ main[role="main"]#main-index #main__container {
 }
 
 /*------- ELEMENTS - TABLES --------*/
+table {
+  margin: 42px 0;
+}
+table td, table th {
+  color: #5C5C5C;
+  padding: 10px 5px 10px 20px;
+  vertical-align: top;
+  border-style: solid;
+}
+table tfoot td, table th {
+  font: bold 16px/1 "Avenir Next", Arial, Tahoma, Verdana, sans-serif;
+  text-align: left;
+}
+table th {
+  border-width: 0 0 1px;
+  border-color: #5C5C5C;
+  color: #333;
+  background-color: #e8e8e8;
+}
+table tfoot td {
+  font-size: 14px;
+  border-width: 1px 0 0;
+  color: #5C5C5C;
+  border-color: #95989A;
+  background-color: #F8F8F8;
+}
+table tbody td {
+  border-width: 0 0 1px;
+  color: #5C5C5C;
+  border-color: #95989A;
+}
+table tbody tr:hover td {
+  color: black;
+}
+
 /*--- FANCYBOX ---*/
 /*--- Banner with foreground ---*/
 .banner_back {

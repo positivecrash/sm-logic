@@ -30,9 +30,17 @@ $color-text: $color-gray-1;
 $color-lk: $color-blue;
 $color-lk_hover: darken($color-lk, 5%);
 
-$color-table-head: #333; //tmp
-$color-table-border: #333; //tmp
-$color-table-border_hov: #333;
+
+$color-table-head-text: $color-gray-0;
+$color-table-head-back: lighten($color-text, 55%);
+$color-table-head-border: $color-gray-1;
+
+$color-table-foot-text: $color-text;
+$color-table-foot-back: $color-gray-4;
+$color-table-foot-border: $color-gray-2;
+
+$color-table-text: $color-text;
+$color-table-border: $color-gray-2;
 
 
 
