@@ -65,7 +65,7 @@
     //Animations for Index page
     &.p-index{
       
-        #nav-logo, #nav-menu, 
+        #nav-logo, #nav-menu, #nav-toggles,
         #solutions .IconsTexts span, #solutions .IconsTexts a:last-child, #solutions .btn-primary,
         #services .IconsTexts span, #services .IconsTexts a:last-child
         {
@@ -73,14 +73,14 @@
         }
 
 
-        #nav-logo, #nav-menu{
+        #nav-logo, #nav-menu, #nav-toggles{
           &.a-show{
             animation:  .5s fadeIn ease-out forwards;
           }
         }
 
         #solutions.a-show{
-            .sprite-circus{
+            .sprite-office{
               animation:  .5s shiftIcons ease-out forwards, .7s fadeIn .2s ease-out forwards;
             }
 

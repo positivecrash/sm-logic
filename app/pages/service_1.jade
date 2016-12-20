@@ -2,7 +2,7 @@ extends extends/layout.jade
 include includes/mixins.jade
 
 block html
-	- var pageclass = 'p-service service-1'
+	- var pageclass = 'p-service'
 
 block head
 	- var pageTitle = 'Проектирование, монтаж, обслуживание систем защиты зданий'
@@ -24,6 +24,8 @@ block content
 			#banner_arrow
 				a(href="#")
 					span.sprite-arrow
+
+			.banner_back_img(style="background-image: url('assets/i/banners/banner_service_1.jpg');")
 	
 
 	main(role="main").marginBotFix

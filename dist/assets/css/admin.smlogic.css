@@ -1,0 +1,421 @@
+@charset "UTF-8";
+.sprite-air {
+  display: inline-block;
+  width: 136.93px;
+  height: 99.156px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px 0px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-air {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-alarm {
+  display: inline-block;
+  width: 106.016px;
+  height: 122.585px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -100px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-alarm {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-arrow {
+  display: inline-block;
+  width: 30.409px;
+  height: 17.334px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -223px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-arrow {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-arrowS {
+  display: inline-block;
+  width: 16.04px;
+  height: 8.601px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -241px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-arrowS {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-camera {
+  display: inline-block;
+  width: 130.869px;
+  height: 119.389px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -250px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-camera {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-circus {
+  display: inline-block;
+  width: 85.575px;
+  height: 93.03px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -370px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-circus {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-control {
+  display: inline-block;
+  width: 102.87px;
+  height: 101.984px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -464px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-control {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-default {
+  display: inline-block;
+  width: 114.349px;
+  height: 100.056px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -566px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-default {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-factory {
+  display: inline-block;
+  width: 106.711px;
+  height: 94.453px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -667px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-factory {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-houses {
+  display: inline-block;
+  width: 132.546px;
+  height: 94.389px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -762px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-houses {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-light {
+  display: inline-block;
+  width: 114.57px;
+  height: 114.569px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -857px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-light {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-logoSymbol {
+  display: inline-block;
+  width: 41.144px;
+  height: 36.001px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -972px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-logoSymbol {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-music {
+  display: inline-block;
+  width: 96.154px;
+  height: 96.154px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1009px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-music {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-office {
+  display: inline-block;
+  width: 106.922px;
+  height: 95.337px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1106px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-office {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-satellite {
+  display: inline-block;
+  width: 92.235px;
+  height: 126.495px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1202px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-satellite {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-server {
+  display: inline-block;
+  width: 112.197px;
+  height: 110.262px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1329px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-server {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-smLogic_dec {
+  display: inline-block;
+  width: 197.5px;
+  height: 337.6px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1440px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-smLogic_dec {
+  background-image: url("../i/sprite.png");
+}
+
+.sprite-stadium {
+  display: inline-block;
+  width: 136.564px;
+  height: 98.682px;
+  background-image: url("../i/sprite.svg");
+  background-position: 0px -1778px;
+  background-repeat: no-repeat;
+}
+.no-svg .sprite-stadium {
+  background-image: url("../i/sprite.png");
+}
+
+@font-face {
+  font-family: "CustomIcons";
+  src: url("../fonts/CustomIcons.eot");
+  src: url("../fonts/CustomIcons.eot?#iefix") format("eot"), url("../fonts/CustomIcons.woff") format("woff"), url("../fonts/CustomIcons.ttf") format("truetype"), url("../fonts/CustomIcons.svg#CustomIcons") format("svg");
+}
+.i-alarm, .i-arrow, .i-barrier, .i-camera, .i-cold, .i-connect, .i-disabled, .i-electricity, .i-firealarm, .i-firefight, .i-firewater, .i-gate, .i-heat, .i-heatTech, .i-heater, .i-hood, .i-horn, .i-lightInside, .i-lightOutside, .i-lightStand, .i-logo, .i-menu, .i-microphone, .i-phone, .i-plug, .i-presentation, .i-radio, .i-settings, .i-sound, .i-speaker, .i-spotlight, .i-stadium, .i-technology, .i-telephone, .i-terminal, .i-time, .i-timer, .i-ventilation, .i-ventilationAir, .i-ventilationTech, .i-videoCam, .i-wifi {
+  font-family: "CustomIcons";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-decoration: none;
+  text-transform: none;
+  display: inline-block;
+  line-height: 1;
+}
+
+.i-alarm:before {
+  content: "";
+}
+
+.i-arrow:before {
+  content: "";
+}
+
+.i-barrier:before {
+  content: "";
+}
+
+.i-camera:before {
+  content: "";
+}
+
+.i-cold:before {
+  content: "";
+}
+
+.i-connect:before {
+  content: "";
+}
+
+.i-disabled:before {
+  content: "";
+}
+
+.i-electricity:before {
+  content: "";
+}
+
+.i-firealarm:before {
+  content: "";
+}
+
+.i-firefight:before {
+  content: "";
+}
+
+.i-firewater:before {
+  content: "";
+}
+
+.i-gate:before {
+  content: "";
+}
+
+.i-heat:before {
+  content: "";
+}
+
+.i-heatTech:before {
+  content: "";
+}
+
+.i-heater:before {
+  content: "";
+}
+
+.i-hood:before {
+  content: "";
+}
+
+.i-horn:before {
+  content: "";
+}
+
+.i-lightInside:before {
+  content: "";
+}
+
+.i-lightOutside:before {
+  content: "";
+}
+
+.i-lightStand:before {
+  content: "";
+}
+
+.i-logo:before {
+  content: "";
+}
+
+.i-menu:before {
+  content: "";
+}
+
+.i-microphone:before {
+  content: "";
+}
+
+.i-phone:before {
+  content: "";
+}
+
+.i-plug:before {
+  content: "";
+}
+
+.i-presentation:before {
+  content: "";
+}
+
+.i-radio:before {
+  content: "";
+}
+
+.i-settings:before {
+  content: "";
+}
+
+.i-sound:before {
+  content: "";
+}
+
+.i-speaker:before {
+  content: "";
+}
+
+.i-spotlight:before {
+  content: "";
+}
+
+.i-stadium:before {
+  content: "";
+}
+
+.i-technology:before {
+  content: "";
+}
+
+.i-telephone:before {
+  content: "";
+}
+
+.i-terminal:before {
+  content: "";
+}
+
+.i-time:before {
+  content: "";
+}
+
+.i-timer:before {
+  content: "";
+}
+
+.i-ventilation:before {
+  content: "";
+}
+
+.i-ventilationAir:before {
+  content: "";
+}
+
+.i-ventilationTech:before {
+  content: "";
+}
+
+.i-videoCam:before {
+  content: "";
+}
+
+.i-wifi:before {
+  content: "";
+}
+
+.admin-showi-grid {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-flow: row wrap;
+      flex-flow: row wrap;
+  -webkit-box-pack: first-start;
+      -ms-flex-pack: first-start;
+          justify-content: first-start;
+}
+.admin-showi-grid li {
+  padding-right: 40px;
+  padding-bottom: 40px;
+}
+.admin-showi-grid *[class^='i-'] {
+  color: #135495;
+  font-size: 60px;
+}

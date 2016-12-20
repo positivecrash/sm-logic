@@ -153,6 +153,7 @@ main[role="main"]{
   vertical-align: top;
   box-sizing: border-box;
   margin-left: 4%;
+  margin-bottom: 4%;
 
 
   @include mobile(){
@@ -900,12 +901,6 @@ table{
 /*======== SERVICES =========*/
 .p-service{
 
-  // main[role="main"]{
-  //    @include mobile(){
-  //     padding-top: $vertical-rythm * 3 !important;
-  //   }
-  // }
-
   .banner_fore{
     &, &:after{
       background: none;
@@ -919,8 +914,7 @@ table{
   }
 
   .banner_back{
-    &:before {
-      content: "";
+    .banner_back_img{
       position: absolute;
       top: 0;
       left: 0;
@@ -929,6 +923,7 @@ table{
       z-index: 0;
 
       @extend %banner_image;
+      background-image: image-url($banner-index);
     }
 
     &:after{
@@ -964,10 +959,10 @@ table{
 }
 
 
-.service-1 .banner_back:before { background-image: image-url('banners/banner_service_1.jpg'); }
-.service-2 .banner_back:before { background-image: image-url('banners/banner_service_2.jpg'); background-position: 0 50%; }
-.service-3 .banner_back:before { background-image: image-url('banners/banner_service_3.jpg'); }
-.service-4 .banner_back:before { background-image: image-url('banners/banner_service_4.jpg'); }
+// .service-1 .banner_back:before { background-image: image-url('banners/banner_service_1.jpg'); }
+// .service-2 .banner_back:before { background-image: image-url('banners/banner_service_2.jpg'); background-position: 0 50%; }
+// .service-3 .banner_back:before { background-image: image-url('banners/banner_service_3.jpg'); }
+// .service-4 .banner_back:before { background-image: image-url('banners/banner_service_4.jpg'); }
 
 
 /*======== END OF SERVICES =========*/

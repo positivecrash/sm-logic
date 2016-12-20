@@ -40,59 +40,119 @@
 	@if $filename == camera {
 		$char: "\E004";
 	}
-	@if $filename == disabled {
+	@if $filename == cold {
 		$char: "\E005";
 	}
-	@if $filename == firealarm {
+	@if $filename == connect {
 		$char: "\E006";
 	}
-	@if $filename == firefight {
+	@if $filename == disabled {
 		$char: "\E007";
 	}
-	@if $filename == firewater {
+	@if $filename == electricity {
 		$char: "\E008";
 	}
-	@if $filename == gate {
+	@if $filename == firealarm {
 		$char: "\E009";
 	}
-	@if $filename == hood {
+	@if $filename == firefight {
 		$char: "\E00A";
 	}
-	@if $filename == horn {
+	@if $filename == firewater {
 		$char: "\E00B";
 	}
-	@if $filename == internetSocket {
+	@if $filename == gate {
 		$char: "\E00C";
 	}
-	@if $filename == laptopConnect {
+	@if $filename == heat {
 		$char: "\E00D";
 	}
-	@if $filename == logo {
+	@if $filename == heatTech {
 		$char: "\E00E";
 	}
-	@if $filename == menu {
+	@if $filename == heater {
 		$char: "\E00F";
 	}
-	@if $filename == networking {
+	@if $filename == hood {
 		$char: "\E010";
 	}
-	@if $filename == phone {
+	@if $filename == horn {
 		$char: "\E011";
 	}
-	@if $filename == radio {
+	@if $filename == lightInside {
 		$char: "\E012";
 	}
-	@if $filename == server {
+	@if $filename == lightOutside {
 		$char: "\E013";
 	}
-	@if $filename == technology {
+	@if $filename == lightStand {
 		$char: "\E014";
 	}
-	@if $filename == time {
+	@if $filename == logo {
 		$char: "\E015";
 	}
-	@if $filename == wifi {
+	@if $filename == menu {
 		$char: "\E016";
+	}
+	@if $filename == microphone {
+		$char: "\E017";
+	}
+	@if $filename == phone {
+		$char: "\E018";
+	}
+	@if $filename == plug {
+		$char: "\E019";
+	}
+	@if $filename == presentation {
+		$char: "\E01A";
+	}
+	@if $filename == radio {
+		$char: "\E01B";
+	}
+	@if $filename == settings {
+		$char: "\E01C";
+	}
+	@if $filename == sound {
+		$char: "\E01D";
+	}
+	@if $filename == speaker {
+		$char: "\E01E";
+	}
+	@if $filename == spotlight {
+		$char: "\E01F";
+	}
+	@if $filename == stadium {
+		$char: "\E020";
+	}
+	@if $filename == technology {
+		$char: "\E021";
+	}
+	@if $filename == telephone {
+		$char: "\E022";
+	}
+	@if $filename == terminal {
+		$char: "\E023";
+	}
+	@if $filename == time {
+		$char: "\E024";
+	}
+	@if $filename == timer {
+		$char: "\E025";
+	}
+	@if $filename == ventilation {
+		$char: "\E026";
+	}
+	@if $filename == ventilationAir {
+		$char: "\E027";
+	}
+	@if $filename == ventilationTech {
+		$char: "\E028";
+	}
+	@if $filename == videoCam {
+		$char: "\E029";
+	}
+	@if $filename == wifi {
+		$char: "\E02A";
 	}
 
 	@return $char;
@@ -118,8 +178,17 @@
 .i-camera {
 	@include icon(camera);
 }
+.i-cold {
+	@include icon(cold);
+}
+.i-connect {
+	@include icon(connect);
+}
 .i-disabled {
 	@include icon(disabled);
+}
+.i-electricity {
+	@include icon(electricity);
 }
 .i-firealarm {
 	@include icon(firealarm);
@@ -133,17 +202,29 @@
 .i-gate {
 	@include icon(gate);
 }
+.i-heat {
+	@include icon(heat);
+}
+.i-heatTech {
+	@include icon(heatTech);
+}
+.i-heater {
+	@include icon(heater);
+}
 .i-hood {
 	@include icon(hood);
 }
 .i-horn {
 	@include icon(horn);
 }
-.i-internetSocket {
-	@include icon(internetSocket);
+.i-lightInside {
+	@include icon(lightInside);
 }
-.i-laptopConnect {
-	@include icon(laptopConnect);
+.i-lightOutside {
+	@include icon(lightOutside);
+}
+.i-lightStand {
+	@include icon(lightStand);
 }
 .i-logo {
 	@include icon(logo);
@@ -151,23 +232,62 @@
 .i-menu {
 	@include icon(menu);
 }
-.i-networking {
-	@include icon(networking);
+.i-microphone {
+	@include icon(microphone);
 }
 .i-phone {
 	@include icon(phone);
 }
+.i-plug {
+	@include icon(plug);
+}
+.i-presentation {
+	@include icon(presentation);
+}
 .i-radio {
 	@include icon(radio);
 }
-.i-server {
-	@include icon(server);
+.i-settings {
+	@include icon(settings);
+}
+.i-sound {
+	@include icon(sound);
+}
+.i-speaker {
+	@include icon(speaker);
+}
+.i-spotlight {
+	@include icon(spotlight);
+}
+.i-stadium {
+	@include icon(stadium);
 }
 .i-technology {
 	@include icon(technology);
 }
+.i-telephone {
+	@include icon(telephone);
+}
+.i-terminal {
+	@include icon(terminal);
+}
 .i-time {
 	@include icon(time);
+}
+.i-timer {
+	@include icon(timer);
+}
+.i-ventilation {
+	@include icon(ventilation);
+}
+.i-ventilationAir {
+	@include icon(ventilationAir);
+}
+.i-ventilationTech {
+	@include icon(ventilationTech);
+}
+.i-videoCam {
+	@include icon(videoCam);
 }
 .i-wifi {
 	@include icon(wifi);
