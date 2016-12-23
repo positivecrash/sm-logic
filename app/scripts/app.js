@@ -200,13 +200,13 @@ jQuery(document).ready(function($){
 
 
             $this = $(this);
-            $subm = $(this).parent('li').find('ul');
+            $subm = $this.next('ul');
             active = 'active';
 
             if($subm.is(':hidden')){
                 $subm
                     .css('top', $nav.outerHeight(true)/2 + $(this).parent('li').height()/2)
-                    .slideDown()
+                    .show()
                     .attr('tabindex', 1).focus()
                     .focusout(function(){
                         $subm

@@ -511,14 +511,14 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, .fbx-close, input, textarea, select, .btn-pr
 
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Demi.eot?1482217433');
-  src: url('../fonts/AvenirNextCyr-Demi.eot?&1482217433#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1482217433') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?1482487642');
+  src: url('../fonts/AvenirNextCyr-Demi.eot?&1482487642#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Demi.woff?1482487642') format('woff'), url('../fonts/AvenirNextCyr-Demi.ttf?1475207868') format('truetype');
   font-weight: normal;
 }
 @font-face {
   font-family: "Avenir Next";
-  src: url('../fonts/AvenirNextCyr-Bold.eot?1482217433');
-  src: url('../fonts/AvenirNextCyr-Bold.eot?&1482217433#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1482217433') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?1482487642');
+  src: url('../fonts/AvenirNextCyr-Bold.eot?&1482487642#iefix') format('embedded-opentype'), url('../fonts/AvenirNextCyr-Bold.woff?1482487642') format('woff'), url('../fonts/AvenirNextCyr-Bold.ttf?1475207844') format('truetype');
   font-weight: bold;
 }
 body, .grid-4, .grid-3, .grid-2, .tabs .tab_text {
