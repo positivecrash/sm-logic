@@ -1720,9 +1720,6 @@ main[role="main"]#main-index #main__container {
 .p-text main[role="main"] {
   padding-bottom: 105px;
 }
-.p-text footer[role='contentinfo'] {
-  position: absolute;
-}
 
 .marginBotFix:after {
   content: "";
