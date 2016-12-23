@@ -64,7 +64,7 @@ main[role="main"]{
 
 }
 
-.p-text{
+#{$modernizr-flexbox}.p-text{
   body{
     //for footer at bottom
     display: flex;
@@ -81,7 +81,7 @@ main[role="main"]{
   }
 }
 
-#{$modernizr-flexbox}.p-text{
+.p-text{
 
   main[role="main"]{
     padding-bottom: $vertical-rythm * 5;

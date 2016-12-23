@@ -1717,7 +1717,7 @@ main[role="main"]#main-index #main__container {
   padding-top: 0;
 }
 
-.p-text body {
+.flexbox.p-text body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1728,13 +1728,13 @@ main[role="main"]#main-index #main__container {
           flex-direction: column;
   height: auto;
 }
-.p-text main[role="main"] {
+.flexbox.p-text main[role="main"] {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
 }
 
-.flexbox.p-text main[role="main"] {
+.p-text main[role="main"] {
   padding-bottom: 105px;
 }
 
