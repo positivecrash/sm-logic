@@ -64,27 +64,31 @@ main[role="main"]{
 
 }
 
-#{$modernizr-flexbox}.p-text{
-  body{
-    //for footer at bottom
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
+// #{$modernizr-flexbox}.p-text{
+//   body{
+//     //for footer at bottom
+//     display: flex;
+//     min-height: 100vh;
+//     flex-direction: column;
 
-    height: auto;
+//     height: auto;
 
-  }
+//   }
 
-  main[role="main"]{
-    //for footer at bottom
-    flex: 1;
-  }
-}
+//   main[role="main"]{
+//     //for footer at bottom
+//     flex: 1;
+//   }
+// }
 
 .p-text{
 
   main[role="main"]{
     padding-bottom: $vertical-rythm * 5;
+  }
+
+  footer[role='contentinfo']{
+    position: absolute;
   }
 }
 
