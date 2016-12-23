@@ -76,13 +76,17 @@ main[role="main"]{
   }
 
   main[role="main"]{
-    padding-bottom: $vertical-rythm * 5;
-
     //for footer at bottom
     flex: 1;
   }
 }
 
+#{$modernizr-flexbox}.p-text{
+
+  main[role="main"]{
+    padding-bottom: $vertical-rythm * 5;
+  }
+}
 
 .marginBotFix{  //fixes margin-bottom for last elements
   &:after{
