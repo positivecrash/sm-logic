@@ -5020,7 +5020,8 @@ jQuery(document).ready(function($){
 			}
 		}
 
-		$('.fancybox').fancybox(fancyBoxDefaults);
+        $('.fancybox').fancybox(fancyBoxDefaults);
+		$('.gallery-icon a').fancybox(fancyBoxDefaults);
 	}
 
 	/*===  end of FANCYBOX ===*/
